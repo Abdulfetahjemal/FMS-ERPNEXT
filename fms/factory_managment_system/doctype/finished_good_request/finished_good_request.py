@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class StockLocationItem(Document):
+class FinishedGoodRequest(Document):
 	pass

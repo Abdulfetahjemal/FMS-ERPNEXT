@@ -1,24 +1,17 @@
 {
  "actions": [],
- "creation": "2025-02-28 12:07:45.801376",
+ "allow_rename": 1,
+ "creation": "2025-02-28 20:43:52.884872",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "location",
   "item_type",
-  "local",
+  "item",
   "quantity",
-  "units"
+  "valuation_rate",
+  "entry_type"
  ],
  "fields": [
-  {
-   "fieldname": "location",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Location",
-   "options": "Stock Location",
-   "reqd": 1
-  },
   {
    "fieldname": "item_type",
    "fieldtype": "Link",
@@ -28,7 +21,7 @@
    "reqd": 1
   },
   {
-   "fieldname": "local",
+   "fieldname": "item",
    "fieldtype": "Dynamic Link",
    "in_list_view": 1,
    "label": "Item",
@@ -40,23 +33,30 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Quantity",
+   "non_negative": 1,
    "reqd": 1
   },
   {
-   "fieldname": "units",
-   "fieldtype": "Link",
-   "label": "Units",
-   "options": "UOM",
+   "fieldname": "valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Valuation Rate",
+   "non_negative": 1,
+   "precision": "2",
    "reqd": 1
+  },
+  {
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "label": "Entry Type",
+   "options": "Adding\nRemoving"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 12:29:42.091016",
+ "modified": "2025-02-28 20:50:21.720374",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Stock Location Item",
- "naming_rule": "Expression (old style)",
+ "name": "Stock Entry",
  "owner": "Administrator",
  "permissions": [
   {
@@ -72,11 +72,7 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "states": []
 }

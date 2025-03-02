@@ -1,24 +1,63 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:first_name",
  "creation": "2025-02-28 12:45:02.308446",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_3mar"
+  "first_name",
+  "email",
+  "password",
+  "title",
+  "site"
  ],
  "fields": [
   {
-   "fieldname": "section_break_3mar",
-   "fieldtype": "Section Break"
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Title",
+   "options": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 12:45:02.308446",
+ "modified": "2025-02-28 20:56:09.092107",
  "modified_by": "Administrator",
  "module": "Factory Employee Managment",
  "name": "Employee Registration",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -36,5 +75,8 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

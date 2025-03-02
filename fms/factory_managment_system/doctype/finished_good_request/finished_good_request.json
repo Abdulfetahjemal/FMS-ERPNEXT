@@ -1,16 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-28 12:37:28.424687",
+ "creation": "2025-02-28 20:22:47.760113",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "finished_good",
   "quantity",
-  "formula",
-  "approver",
-  "shift_leader",
-  "remark",
   "status"
  ],
  "fields": [
@@ -23,40 +19,12 @@
    "reqd": 1
   },
   {
-   "default": "1",
    "fieldname": "quantity",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Quantity/Batch",
+   "label": "Quantity",
    "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "formula",
-   "fieldtype": "Link",
-   "label": "Formula",
-   "options": "Finished Good Formula",
-   "reqd": 1
-  },
-  {
-   "fieldname": "approver",
-   "fieldtype": "Link",
-   "label": "Approver",
-   "options": "Employee",
-   "reqd": 1
-  },
-  {
-   "fieldname": "shift_leader",
-   "fieldtype": "Link",
-   "label": "Shift Leader",
-   "options": "Employee",
-   "reqd": 1
-  },
-  {
-   "fieldname": "remark",
-   "fieldtype": "Data",
-   "label": "Remark",
-   "placeholder": "Enter Remark",
+   "precision": "2",
    "reqd": 1
   },
   {
@@ -68,10 +36,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 19:52:26.196106",
+ "modified": "2025-02-28 20:24:26.209439",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Production Plan",
+ "name": "Finished Good Request",
  "owner": "Administrator",
  "permissions": [
   {
@@ -87,11 +55,7 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "states": []
 }

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestStockLocation(FrappeTestCase):
+class TestFinishedGoodRequest(FrappeTestCase):
 	pass

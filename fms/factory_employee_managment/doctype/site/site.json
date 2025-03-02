@@ -1,36 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-28 11:57:54.942876",
+ "creation": "2025-02-28 20:53:14.391602",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "location_name",
-  "location_type"
+  "site_name"
  ],
  "fields": [
   {
-   "fieldname": "location_name",
+   "fieldname": "site_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Location Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "location_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Location Type",
-   "options": "Storage\nInventory",
+   "label": "Site Name",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 12:07:07.880370",
+ "modified": "2025-02-28 20:54:06.260379",
  "modified_by": "Administrator",
- "module": "Inventory",
- "name": "Stock Location",
+ "module": "Factory Employee Managment",
+ "name": "Site",
  "owner": "Administrator",
  "permissions": [
   {
@@ -48,5 +39,8 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }
