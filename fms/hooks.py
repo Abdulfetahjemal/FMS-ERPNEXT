@@ -4,7 +4,11 @@ app_publisher = "birukassefa123@gmail.com"
 app_description = "Manages Factory System for small to medium settings"
 app_email = "birukassefa123@gmail.com"
 app_license = "mit"
-
+fixtures = [
+    {
+        "dt": "Workflow"
+    }
+]
 # Apps
 # ------------------
 
