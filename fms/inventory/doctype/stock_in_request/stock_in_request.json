@@ -5,47 +5,52 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "type",
-  "raw_material",
-  "quantity",
+  "details",
+  "do_number",
+  "remark",
+  "approver",
   "status"
  ],
  "fields": [
-  {
-   "fieldname": "type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Type",
-   "options": "DocType",
-   "reqd": 1
-  },
-  {
-   "fieldname": "raw_material",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "label": "Raw Material",
-   "options": "type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Quantity",
-   "non_negative": 1,
-   "reqd": 1
-  },
   {
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status",
    "read_only": 1
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Stock In Child",
+   "reqd": 1
+  },
+  {
+   "fieldname": "do_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "DO Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "Employee",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 19:58:24.602272",
+ "modified": "2025-03-02 07:12:52.731959",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock In Request",

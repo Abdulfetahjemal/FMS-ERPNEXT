@@ -11,14 +11,17 @@
  "fields": [
   {
    "fieldname": "title",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Title",
+   "options": "Role Profile",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 12:41:32.655151",
+ "modified": "2025-03-03 14:41:57.021601",
  "modified_by": "Administrator",
  "module": "Factory Employee Managment",
  "name": "Title",

@@ -3,10 +3,13 @@
  "allow_rename": 1,
  "autoname": "field:employee",
  "creation": "2025-02-28 12:42:45.112731",
+ "description": "Represent Employees in our factory",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "employee",
+  "name1",
+  "phone_number",
   "title",
   "site"
  ],
@@ -16,13 +19,15 @@
    "fieldtype": "Link",
    "label": "Employee",
    "options": "User",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "title",
    "fieldtype": "Link",
    "label": "Title",
-   "options": "Title"
+   "options": "Title",
+   "reqd": 1
   },
   {
    "fieldname": "site",
@@ -31,11 +36,25 @@
    "label": "Site",
    "options": "Site",
    "reqd": 1
+  },
+  {
+   "default": "+251-",
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "employee.first_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 20:55:32.576728",
+ "modified": "2025-03-03 14:46:40.793243",
  "modified_by": "Administrator",
  "module": "Factory Employee Managment",
  "name": "Employee",

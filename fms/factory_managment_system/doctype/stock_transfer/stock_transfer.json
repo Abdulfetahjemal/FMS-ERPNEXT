@@ -1,60 +1,61 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-28 20:22:47.760113",
+ "creation": "2025-03-02 07:32:43.396300",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "finished_good",
-  "quantity",
-  "approver",
-  "remark",
+  "raw_material",
+  "amount",
+  "unit",
+  "to",
   "status"
  ],
  "fields": [
   {
-   "fieldname": "finished_good",
+   "fieldname": "raw_material",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Finished Good",
-   "options": "Finished Good",
+   "label": "Raw Material",
+   "options": "Raw Materials",
    "reqd": 1
   },
   {
-   "fieldname": "quantity",
+   "fieldname": "amount",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Batch",
+   "label": "Amount",
    "non_negative": 1,
    "precision": "2",
    "reqd": 1
   },
   {
-   "default": "Pending",
-   "fieldname": "status",
-   "fieldtype": "Data",
-   "label": "Status"
+   "fetch_from": "raw_material.link_ckqv",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "UOM"
   },
   {
-   "fieldname": "approver",
+   "fieldname": "to",
    "fieldtype": "Link",
-   "label": "Approver",
+   "in_list_view": 1,
+   "label": "To",
    "options": "Employee",
    "reqd": 1
   },
   {
-   "fieldname": "remark",
+   "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Remark",
-   "reqd": 1
+   "label": "Status"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 07:21:04.586490",
+ "modified": "2025-03-02 07:35:33.235543",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Finished Good Request",
+ "name": "Stock Transfer",
  "owner": "Administrator",
  "permissions": [
   {

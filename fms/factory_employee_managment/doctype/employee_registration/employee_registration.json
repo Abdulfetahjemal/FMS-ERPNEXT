@@ -8,9 +8,13 @@
  "field_order": [
   "first_name",
   "email",
+  "phone_number",
   "password",
+  "confirm_password",
   "title",
-  "site"
+  "site",
+  "amended_from",
+  "message"
  ],
  "fields": [
   {
@@ -49,11 +53,42 @@
    "label": "Site",
    "options": "Site",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Registration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "+251-",
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "confirm_password",
+   "fieldtype": "Password",
+   "label": "Confirm Password",
+   "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "message",
+   "fieldtype": "Data",
+   "label": "Message",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-02-28 20:56:09.092107",
+ "modified": "2025-03-05 09:55:57.614147",
  "modified_by": "Administrator",
  "module": "Factory Employee Managment",
  "name": "Employee Registration",
@@ -70,6 +105,19 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

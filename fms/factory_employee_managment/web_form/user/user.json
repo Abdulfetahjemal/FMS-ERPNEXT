@@ -1,0 +1,86 @@
+{
+ "allow_comments": 1,
+ "allow_delete": 0,
+ "allow_edit": 1,
+ "allow_incomplete": 1,
+ "allow_multiple": 0,
+ "allow_print": 1,
+ "anonymous": 0,
+ "apply_document_permissions": 1,
+ "button_label": "Save",
+ "condition_json": "[]",
+ "creation": "2025-03-02 14:00:27.792509",
+ "doc_type": "User",
+ "docstatus": 0,
+ "doctype": "Web Form",
+ "idx": 0,
+ "is_standard": 1,
+ "list_columns": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  }
+ ],
+ "login_required": 1,
+ "max_attachment_size": 0,
+ "modified": "2025-03-03 14:24:17.534847",
+ "modified_by": "Administrator",
+ "module": "Factory Employee Managment",
+ "name": "user",
+ "owner": "Administrator",
+ "published": 0,
+ "route": "user",
+ "show_attachments": 1,
+ "show_list": 1,
+ "show_sidebar": 1,
+ "title": "User",
+ "web_form_fields": [
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "First Name",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 1,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "Email",
+   "max_length": 0,
+   "max_value": 0,
+   "options": "Email",
+   "precision": "",
+   "read_only": 0,
+   "reqd": 1,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "new_password",
+   "fieldtype": "Password",
+   "hidden": 0,
+   "label": "Set New Password",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  }
+ ],
+ "website_sidebar": "Side Nav"
+}
