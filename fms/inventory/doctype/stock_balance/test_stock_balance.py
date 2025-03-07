@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestRawMaterials(FrappeTestCase):
+class TestStockBalance(FrappeTestCase):
 	pass

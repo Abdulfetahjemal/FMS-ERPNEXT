@@ -1,22 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-28 12:30:34.423536",
+ "creation": "2025-03-02 07:08:09.938249",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "raw_materials",
+  "item_type",
+  "item",
+  "supplier",
   "quantity",
   "unit"
  ],
  "fields": [
   {
-   "fieldname": "raw_materials",
+   "fieldname": "supplier",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Raw Materials",
-   "options": "Raw Materials Registration",
+   "label": "Supplier",
+   "options": "Supplier",
    "reqd": 1
   },
   {
@@ -35,15 +36,31 @@
    "label": "Unit",
    "options": "UOM",
    "reqd": 1
+  },
+  {
+   "fetch_from": "item.item_group",
+   "fieldname": "item_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Type",
+   "options": "Item Groups",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-07 18:41:08.289064",
+ "modified": "2025-03-07 21:28:41.465432",
  "modified_by": "Administrator",
- "module": "Factory Managment System",
- "name": "Raw Materials Child",
+ "module": "Inventory",
+ "name": "Stock Child",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

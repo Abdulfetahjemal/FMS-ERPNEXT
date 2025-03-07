@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class RawMaterials(Document):
+class RawMaterialsRegistration(Document):
 	pass

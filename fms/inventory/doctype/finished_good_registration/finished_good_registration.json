@@ -7,10 +7,12 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "weight",
   "uom",
-  "expected_production",
-  "price"
+  "default_warehouse",
+  "table_tcbn",
+  "image",
+  "amended_from",
+  "status"
  ],
  "fields": [
   {
@@ -22,13 +24,6 @@
    "unique": 1
   },
   {
-   "fieldname": "weight",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Weight",
-   "reqd": 1
-  },
-  {
    "fieldname": "uom",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -37,27 +32,46 @@
    "reqd": 1
   },
   {
-   "fieldname": "expected_production",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Expected Production",
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Warehouse",
+   "options": "Warehouses",
    "reqd": 1
   },
   {
-   "fieldname": "price",
-   "fieldtype": "Currency",
-   "label": "Price",
-   "non_negative": 1,
-   "precision": "2",
-   "reqd": 1
+   "fieldname": "table_tcbn",
+   "fieldtype": "Table",
+   "options": "Item initial Data"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finished Good Registration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-02-28 11:31:01.044840",
+ "modified": "2025-03-08 00:41:00.404684",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Finished Good",
+ "name": "Finished Good Registration",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

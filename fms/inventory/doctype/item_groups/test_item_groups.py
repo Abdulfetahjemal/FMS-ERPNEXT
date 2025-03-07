@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestValuationRate(FrappeTestCase):
+class TestItemGroups(FrappeTestCase):
 	pass

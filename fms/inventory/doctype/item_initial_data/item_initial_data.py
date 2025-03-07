@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FinishedGood(Document):
+class IteminitialData(Document):
 	pass

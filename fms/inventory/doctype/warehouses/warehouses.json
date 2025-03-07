@@ -1,38 +1,48 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
- "creation": "2025-02-28 11:16:27.199032",
+ "autoname": "field:warehouse_name",
+ "creation": "2025-03-07 18:22:14.794125",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "link_ckqv"
+  "warehouse_name",
+  "address",
+  "contact",
+  "capacity"
  ],
  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "warehouse_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "Warehouse Name",
    "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "link_ckqv",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "contact",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Units",
-   "options": "UOM",
-   "reqd": 1
+   "label": "Contact",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Data",
+   "label": "Capacity"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 12:33:10.929078",
+ "modified": "2025-03-08 00:25:21.740237",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Raw Materials",
+ "name": "Warehouses",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -49,6 +59,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

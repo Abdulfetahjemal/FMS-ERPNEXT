@@ -23,7 +23,7 @@
    "fieldname": "details",
    "fieldtype": "Table",
    "label": "Details",
-   "options": "Stock In Child",
+   "options": "Stock Child",
    "reqd": 1
   },
   {
@@ -50,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 07:12:52.731959",
+ "modified": "2025-03-07 19:02:23.799881",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock In Request",

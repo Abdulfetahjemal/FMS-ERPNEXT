@@ -17,7 +17,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Finished Good",
-   "options": "Finished Good",
+   "options": "Finished Good Registration",
    "reqd": 1
   },
   {
@@ -51,7 +51,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 07:21:04.586490",
+ "modified": "2025-03-07 18:46:00.560839",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Request",

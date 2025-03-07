@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ValuationRate(Document):
+class Item(Document):
 	pass

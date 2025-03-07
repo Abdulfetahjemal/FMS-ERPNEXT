@@ -1,33 +1,43 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-28 12:34:59.324225",
+ "creation": "2025-03-07 18:49:30.225855",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "finished_good",
-  "raw_materials"
+  "item",
+  "warehouse",
+  "qty"
  ],
  "fields": [
   {
-   "fieldname": "finished_good",
+   "fieldname": "item",
    "fieldtype": "Link",
-   "label": "Finished Good",
-   "options": "Finished Good Registration"
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1
   },
   {
-   "fieldname": "raw_materials",
-   "fieldtype": "Table",
-   "label": "Raw Materials",
-   "options": "Raw Materials Child"
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouses",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-07 18:46:00.346096",
+ "modified": "2025-03-07 18:51:26.343507",
  "modified_by": "Administrator",
- "module": "Factory Managment System",
- "name": "Finished Good Formula",
+ "module": "Inventory",
+ "name": "Stock Balance",
  "owner": "Administrator",
  "permissions": [
   {
@@ -45,8 +55,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "states": []
 }

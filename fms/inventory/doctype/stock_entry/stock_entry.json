@@ -5,55 +5,36 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "item_type",
-  "item",
-  "quantity",
-  "valuation_rate",
-  "entry_type"
+  "select_utaf",
+  "source_warehouse",
+  "target_warehouse"
  ],
  "fields": [
   {
-   "fieldname": "item_type",
+   "fieldname": "select_utaf",
+   "fieldtype": "Select",
+   "label": "Stock Entry Type",
+   "options": "Stock In,\nStock Out,\nStock Transfer,\nStock Reconciliation",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouses"
+  },
+  {
+   "fieldname": "target_warehouse",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Item Type",
-   "options": "DocType",
+   "label": "Target Warehouse",
+   "options": "Warehouses",
    "reqd": 1
-  },
-  {
-   "fieldname": "item",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "label": "Item",
-   "options": "item_type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Quantity",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "valuation_rate",
-   "fieldtype": "Currency",
-   "label": "Valuation Rate",
-   "non_negative": 1,
-   "precision": "2",
-   "reqd": 1
-  },
-  {
-   "fieldname": "entry_type",
-   "fieldtype": "Select",
-   "label": "Entry Type",
-   "options": "Adding\nRemoving"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 20:50:21.720374",
+ "modified": "2025-03-07 18:30:38.768173",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Entry",
