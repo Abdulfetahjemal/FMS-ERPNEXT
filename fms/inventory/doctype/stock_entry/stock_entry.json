@@ -8,7 +8,7 @@
   "type",
   "source_warehouse",
   "target_warehouse",
-  "table_zhmh",
+  "item_info",
   "remarks",
   "reference_type",
   "reference"
@@ -18,7 +18,8 @@
    "fieldname": "source_warehouse",
    "fieldtype": "Link",
    "label": "Source Warehouse",
-   "options": "Warehouses"
+   "options": "Warehouses",
+   "set_only_once": 1
   },
   {
    "fieldname": "target_warehouse",
@@ -26,7 +27,8 @@
    "in_list_view": 1,
    "label": "Target Warehouse",
    "options": "Warehouses",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "type",
@@ -34,12 +36,8 @@
    "label": "Stock Entry Type",
    "options": "Stock In\nStock Out\nStock Transfer\nStock Reconciliation",
    "reqd": 1,
+   "set_only_once": 1,
    "sort_options": 1
-  },
-  {
-   "fieldname": "table_zhmh",
-   "fieldtype": "Table",
-   "options": "Stock Entry Items"
   },
   {
    "fieldname": "remarks",
@@ -57,11 +55,18 @@
    "fieldtype": "Dynamic Link",
    "label": "Reference ",
    "options": "reference_type"
+  },
+  {
+   "fieldname": "item_info",
+   "fieldtype": "Table",
+   "options": "Stock Entry Items",
+   "reqd": 1,
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-10 08:50:44.055770",
+ "modified": "2025-03-10 18:12:05.484926",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Entry",

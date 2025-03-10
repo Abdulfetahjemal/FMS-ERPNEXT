@@ -1,56 +1,56 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{item}-{warehouse}",
- "creation": "2025-03-07 18:49:30.225855",
+ "creation": "2025-03-10 12:33:10.245403",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "item",
   "warehouse",
-  "qty",
-  "uom"
+  "items",
+  "status",
+  "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "item",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Item",
-   "options": "Item",
-   "reqd": 1,
-   "set_only_once": 1
-  },
   {
    "fieldname": "warehouse",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Warehouse",
    "options": "Warehouses",
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
-   "fieldname": "qty",
-   "fieldtype": "Float",
-   "label": "Qty"
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Stock Entry Items",
+   "reqd": 1
   },
   {
-   "fetch_from": "item.uom",
-   "fieldname": "uom",
+   "fieldname": "amended_from",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "UOM",
-   "options": "UOM"
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Stock Reconciliation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-03-10 13:37:51.921864",
+ "modified": "2025-03-10 13:01:18.234948",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Stock Balance",
- "naming_rule": "Expression",
+ "name": "Stock Reconciliation",
  "owner": "Administrator",
  "permissions": [
   {
