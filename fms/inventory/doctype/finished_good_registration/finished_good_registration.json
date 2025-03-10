@@ -7,9 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "uom",
+  "units",
   "default_warehouse",
-  "table_tcbn",
+  "stock_info",
   "image",
   "amended_from",
   "status"
@@ -24,24 +24,11 @@
    "unique": 1
   },
   {
-   "fieldname": "uom",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "UOM",
-   "options": "UOM",
-   "reqd": 1
-  },
-  {
    "fieldname": "default_warehouse",
    "fieldtype": "Link",
    "label": "Default Warehouse",
    "options": "Warehouses",
    "reqd": 1
-  },
-  {
-   "fieldname": "table_tcbn",
-   "fieldtype": "Table",
-   "options": "Item initial Data"
   },
   {
    "fieldname": "image",
@@ -63,12 +50,26 @@
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status"
+  },
+  {
+   "fieldname": "stock_info",
+   "fieldtype": "Table",
+   "label": "Stock Info",
+   "options": "Item initial Data"
+  },
+  {
+   "fieldname": "units",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-08 00:41:00.404684",
+ "modified": "2025-03-10 08:54:49.390902",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Finished Good Registration",
@@ -92,6 +93,5 @@
  "sort_order": "DESC",
  "states": [],
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }

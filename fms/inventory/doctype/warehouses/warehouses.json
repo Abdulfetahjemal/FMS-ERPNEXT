@@ -39,7 +39,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-08 00:25:21.740237",
+ "modified": "2025-03-10 08:50:25.723020",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Warehouses",
@@ -64,6 +64,5 @@
  "sort_order": "DESC",
  "states": [],
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }

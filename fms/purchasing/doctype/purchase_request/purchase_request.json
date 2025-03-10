@@ -13,13 +13,6 @@
  ],
  "fields": [
   {
-   "default": "Pending",
-   "fieldname": "status",
-   "fieldtype": "Data",
-   "label": "Status",
-   "read_only": 1
-  },
-  {
    "fieldname": "details",
    "fieldtype": "Table",
    "label": "Details",
@@ -46,14 +39,21 @@
    "label": "Approver",
    "options": "Employee",
    "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-07 19:02:23.799881",
+ "modified": "2025-03-08 07:11:32.457126",
  "modified_by": "Administrator",
- "module": "Inventory",
- "name": "Stock In Request",
+ "module": "Purchasing",
+ "name": "Purchase Request",
  "owner": "Administrator",
  "permissions": [
   {

@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class StockInRequest(Document):
+class PurchaseRequest(Document):
 	pass

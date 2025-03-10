@@ -15,7 +15,8 @@
   "weight",
   "color",
   "size",
-  "is_active"
+  "is_active",
+  "inventory_count"
  ],
  "fields": [
   {
@@ -81,11 +82,19 @@
    "fieldname": "is_active",
    "fieldtype": "Check",
    "label": "Is Active"
+  },
+  {
+   "default": "0",
+   "fieldname": "inventory_count",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Inventory Count",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-08 01:20:14.174313",
+ "modified": "2025-03-10 08:49:13.175196",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Item",
@@ -107,5 +116,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
 }

@@ -10,7 +10,7 @@
   "units",
   "default_warehouse",
   "image",
-  "table_sskc",
+  "stock_info",
   "amended_from",
   "status"
  ],
@@ -41,11 +41,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "table_sskc",
-   "fieldtype": "Table",
-   "options": "Item initial Data"
-  },
-  {
    "fieldname": "image",
    "fieldtype": "Attach Image",
    "label": "Image"
@@ -64,12 +59,18 @@
    "label": "Units",
    "options": "UOM",
    "reqd": 1
+  },
+  {
+   "fieldname": "stock_info",
+   "fieldtype": "Table",
+   "label": "Stock Info",
+   "options": "Item initial Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-08 01:16:57.027718",
+ "modified": "2025-03-10 08:55:00.172947",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Raw Materials Registration",
@@ -93,6 +94,5 @@
  "sort_order": "DESC",
  "states": [],
  "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_seen": 1
 }

@@ -1,22 +1,19 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2025-02-28 20:43:52.884872",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "select_utaf",
+  "type",
   "source_warehouse",
-  "target_warehouse"
+  "target_warehouse",
+  "table_zhmh",
+  "remarks",
+  "reference_type",
+  "reference"
  ],
  "fields": [
-  {
-   "fieldname": "select_utaf",
-   "fieldtype": "Select",
-   "label": "Stock Entry Type",
-   "options": "Stock In,\nStock Out,\nStock Transfer,\nStock Reconciliation",
-   "sort_options": 1
-  },
   {
    "fieldname": "source_warehouse",
    "fieldtype": "Link",
@@ -30,14 +27,45 @@
    "label": "Target Warehouse",
    "options": "Warehouses",
    "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Stock Entry Type",
+   "options": "Stock In\nStock Out\nStock Transfer\nStock Reconciliation",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "table_zhmh",
+   "fieldtype": "Table",
+   "options": "Stock Entry Items"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "reference_type",
+   "fieldtype": "Link",
+   "label": "Reference Type ",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference ",
+   "options": "reference_type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-07 18:30:38.768173",
+ "modified": "2025-03-10 08:50:44.055770",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Entry",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -55,5 +83,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
 }

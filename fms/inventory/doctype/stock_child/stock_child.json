@@ -8,18 +8,11 @@
  "field_order": [
   "item_type",
   "item",
-  "supplier",
+  "warehouse",
   "quantity",
   "unit"
  ],
  "fields": [
-  {
-   "fieldname": "supplier",
-   "fieldtype": "Link",
-   "label": "Supplier",
-   "options": "Supplier",
-   "reqd": 1
-  },
   {
    "fieldname": "quantity",
    "fieldtype": "Float",
@@ -29,7 +22,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "raw_materials.link_ckqv",
+   "fetch_from": "item.uom",
    "fieldname": "unit",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -52,12 +45,20 @@
    "label": "Item",
    "options": "Item",
    "reqd": 1
+  },
+  {
+   "fetch_from": "item.default_warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouses",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-07 21:28:41.465432",
+ "modified": "2025-03-08 07:09:31.710371",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Child",
