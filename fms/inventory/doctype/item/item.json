@@ -16,7 +16,8 @@
   "color",
   "size",
   "is_active",
-  "inventory_count"
+  "inventory_count",
+  "cost"
  ],
  "fields": [
   {
@@ -90,11 +91,16 @@
    "in_list_view": 1,
    "label": "Inventory Count",
    "read_only": 1
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-10 08:49:13.175196",
+ "modified": "2025-03-11 19:24:11.733723",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Item",
