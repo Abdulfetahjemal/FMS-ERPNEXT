@@ -1,40 +1,31 @@
 {
  "actions": [],
- "autoname": "autoincrement",
  "creation": "2025-02-28 20:43:52.884872",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "type",
-  "source_warehouse",
   "target_warehouse",
   "item_info",
   "remarks",
   "reference_type",
-  "reference"
+  "reference",
+  "is_cancelled"
  ],
  "fields": [
-  {
-   "fieldname": "source_warehouse",
-   "fieldtype": "Link",
-   "label": "Source Warehouse",
-   "options": "Warehouses",
-   "set_only_once": 1
-  },
   {
    "fieldname": "target_warehouse",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Target Warehouse",
    "options": "Warehouses",
-   "reqd": 1,
    "set_only_once": 1
   },
   {
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Stock Entry Type",
-   "options": "Stock In\nStock Out\nStock Transfer\nStock Reconciliation",
+   "options": "Stock In\nStock Out\nStock Transfer\nStock Adjustment\nStock Creation",
    "reqd": 1,
    "set_only_once": 1,
    "sort_options": 1
@@ -42,6 +33,7 @@
   {
    "fieldname": "remarks",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Remarks"
   },
   {
@@ -59,18 +51,24 @@
   {
    "fieldname": "item_info",
    "fieldtype": "Table",
+   "label": "Item Table",
    "options": "Stock Entry Items",
    "reqd": 1,
    "set_only_once": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_cancelled",
+   "fieldtype": "Check",
+   "label": "Is Cancelled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-10 18:12:05.484926",
+ "modified": "2025-03-28 01:10:00.903712",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Stock Entry",
- "naming_rule": "Autoincrement",
+ "name": "Stock Ledger",
  "owner": "Administrator",
  "permissions": [
   {
@@ -86,6 +84,7 @@
    "write": 1
   }
  ],
+ "queue_in_background": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

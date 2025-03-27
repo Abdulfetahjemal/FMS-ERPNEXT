@@ -9,6 +9,7 @@
   "item",
   "quantity",
   "uom",
+  "warehouse",
   "batch_no",
   "serial_no",
   "rate"
@@ -52,12 +53,21 @@
    "fieldname": "batch_no",
    "fieldtype": "Data",
    "label": "Batch No"
+  },
+  {
+   "fetch_from": "item.default_warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouses",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-10 08:38:45.039716",
+ "modified": "2025-03-28 00:56:07.852775",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Entry Items",

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestStockEntry(FrappeTestCase):
+class TestStockLedger(FrappeTestCase):
 	pass
