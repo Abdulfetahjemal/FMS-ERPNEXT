@@ -10,10 +10,7 @@
   "qty_change",
   "actual_qty",
   "valuation_rate",
-  "posting_date",
-  "posting_time",
   "stock_ledger",
-  "is_cancelled",
   "amended_from"
  ],
  "fields": [
@@ -53,26 +50,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "posting_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Posting Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "posting_time",
-   "fieldtype": "Time",
-   "label": "Posting Time",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "is_cancelled",
-   "fieldtype": "Check",
-   "label": "Is Cancelled",
-   "read_only": 1
-  },
-  {
    "fieldname": "stock_ledger",
    "fieldtype": "Link",
    "label": "Stock Ledger",
@@ -92,7 +69,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-27 16:19:30.404609",
+ "modified": "2025-04-01 21:20:06.912613",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Ledger Entry",

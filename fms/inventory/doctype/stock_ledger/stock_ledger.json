@@ -1,5 +1,7 @@
 {
  "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Ledger-{MM}-{DD}-{type}-{reference}",
  "creation": "2025-02-28 20:43:52.884872",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -40,7 +42,8 @@
    "fieldname": "reference_type",
    "fieldtype": "Link",
    "label": "Reference Type ",
-   "options": "DocType"
+   "options": "DocType",
+   "set_only_once": 1
   },
   {
    "fieldname": "reference",
@@ -65,10 +68,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-28 01:10:00.903712",
+ "modified": "2025-04-01 22:01:34.822121",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Ledger",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

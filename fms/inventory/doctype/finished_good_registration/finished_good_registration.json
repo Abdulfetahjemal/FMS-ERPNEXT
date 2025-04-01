@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "units",
+  "uom",
   "default_warehouse",
   "stock_info",
   "image",
@@ -49,7 +49,8 @@
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "read_only": 1
   },
   {
    "fieldname": "stock_info",
@@ -58,9 +59,8 @@
    "options": "Item initial Data"
   },
   {
-   "fieldname": "units",
+   "fieldname": "uom",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "UOM",
    "options": "UOM",
    "reqd": 1
@@ -69,7 +69,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-10 08:54:49.390902",
+ "modified": "2025-04-01 22:23:24.809743",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Finished Good Registration",
