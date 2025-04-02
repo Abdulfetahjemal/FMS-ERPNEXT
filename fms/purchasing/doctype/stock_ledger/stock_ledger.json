@@ -16,6 +16,15 @@
  ],
  "fields": [
   {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Stock Entry Type",
+   "options": "Stock In\nStock Out\nStock Adjustment\nStock Creation",
+   "reqd": 1,
+   "set_only_once": 1,
+   "sort_options": 1
+  },
+  {
    "depends_on": "eval:doc.type == 'Stock Transfer'",
    "fieldname": "target_warehouse",
    "fieldtype": "Link",
@@ -26,13 +35,12 @@
    "set_only_once": 1
   },
   {
-   "fieldname": "type",
-   "fieldtype": "Select",
-   "label": "Stock Entry Type",
-   "options": "Stock In\nStock Out\nStock Adjustment\nStock Creation",
+   "fieldname": "item_info",
+   "fieldtype": "Table",
+   "label": "Item Table",
+   "options": "Stock Entry Items",
    "reqd": 1,
-   "set_only_once": 1,
-   "sort_options": 1
+   "set_only_once": 1
   },
   {
    "fieldname": "remarks",
@@ -54,14 +62,6 @@
    "options": "reference_type"
   },
   {
-   "fieldname": "item_info",
-   "fieldtype": "Table",
-   "label": "Item Table",
-   "options": "Stock Entry Items",
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
    "default": "0",
    "fieldname": "is_cancelled",
    "fieldtype": "Check",
@@ -70,9 +70,9 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-02 10:51:28.688299",
+ "modified": "2025-04-02 10:51:10.848786",
  "modified_by": "Administrator",
- "module": "Inventory",
+ "module": "Purchasing",
  "name": "Stock Ledger",
  "naming_rule": "Expression",
  "owner": "Administrator",
