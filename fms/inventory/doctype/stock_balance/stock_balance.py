@@ -14,7 +14,7 @@ def create_stock_balance_entry(item_name, warehouse_name):
         stock_balance.item = item_name
         stock_balance.warehouse = warehouse_name
         stock_balance.qty = 0
-        stock_balance.insert(ignore_permissions=True)
+        stock_balance.insert()
         frappe.logger().info(f"Stock Balance created for {item_name} in {warehouse_name}")
     except Exception as e:
         frappe.log_error(
@@ -42,7 +42,7 @@ def populate_stock_balance_for_item(item_name):
     """
     try:
         frappe.logger().info(f"Starting background job for item: {item_name}")
-        warehouses = frappe.get_all("Warehouse", fields=["name"])
+        warehouses = frappe.get_all("Warehouses", fields=["name"])
         for warehouse_name in warehouses:
             if not frappe.db.exists("Stock Balance", {"item": item_name, "warehouse": warehouse_name.name}):
                 create_stock_balance_entry(item_name, warehouse_name.name)
@@ -75,7 +75,7 @@ def update_item_inventory_count(item_name):
 		# 3. Update the inventory count.
 		item_doc.inventory_count = total_qty
 		# 4. Save the Item document.
-		item_doc.save(ignore_permissions=True)
+		item_doc.save()
 		frappe.logger("Stock Balance").info(
 			f"Item {item_name} inventory_count updated to {total_qty} (sum of Stock Balances) in background"
 		)

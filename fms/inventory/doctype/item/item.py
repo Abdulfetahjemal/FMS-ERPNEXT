@@ -19,3 +19,4 @@ class Item(Document):
         except Exception as e:
             # Log the exception for debugging purposes
             frappe.log_error(message=str(e), title="Error in Item.after_insert")
+        

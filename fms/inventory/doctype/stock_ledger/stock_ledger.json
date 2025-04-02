@@ -16,10 +16,12 @@
  ],
  "fields": [
   {
+   "depends_on": "eval:doc.type == 'Stock Transfer'",
    "fieldname": "target_warehouse",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Target Warehouse",
+   "mandatory_depends_on": "eval:doc.type == \"Stock Transfer\"",
    "options": "Warehouses",
    "set_only_once": 1
   },
@@ -27,7 +29,7 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Stock Entry Type",
-   "options": "Stock In\nStock Out\nStock Transfer\nStock Adjustment\nStock Creation",
+   "options": "Stock In\nStock Out\nStock Adjustment\nStock Creation",
    "reqd": 1,
    "set_only_once": 1,
    "sort_options": 1
@@ -68,7 +70,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-01 22:01:34.822121",
+ "modified": "2025-04-02 03:54:06.161255",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Ledger",

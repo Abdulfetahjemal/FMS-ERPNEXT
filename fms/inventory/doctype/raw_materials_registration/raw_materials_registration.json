@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "units",
+  "uom",
   "default_warehouse",
   "image",
   "stock_info",
@@ -53,24 +53,24 @@
    "read_only": 1
   },
   {
-   "fieldname": "units",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Units",
-   "options": "UOM",
-   "reqd": 1
-  },
-  {
    "fieldname": "stock_info",
    "fieldtype": "Table",
    "label": "Stock Info",
    "options": "Item initial Data"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-10 08:55:00.172947",
+ "modified": "2025-04-02 01:04:59.696293",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Raw Materials Registration",

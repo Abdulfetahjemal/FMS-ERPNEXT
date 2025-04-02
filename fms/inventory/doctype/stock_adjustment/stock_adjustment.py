@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class StockReconciliation(Document):
+class StockAdjustment(Document):
 	pass

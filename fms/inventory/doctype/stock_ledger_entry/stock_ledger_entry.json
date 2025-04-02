@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{stock_ledger}-{warehouse}-{MM}-{DD}-{####}",
  "creation": "2025-03-27 16:11:47.440818",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -40,12 +41,14 @@
   {
    "fieldname": "actual_qty",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Actual Quantity",
    "read_only": 1
   },
   {
    "fieldname": "valuation_rate",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Valuation Rate",
    "read_only": 1
   },
@@ -69,10 +72,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-01 21:20:06.912613",
+ "modified": "2025-04-02 01:59:51.132009",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Ledger Entry",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

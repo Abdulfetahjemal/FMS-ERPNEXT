@@ -5,20 +5,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "warehouse",
   "items",
   "status",
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "warehouse",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Warehouse",
-   "options": "Warehouses",
-   "reqd": 1
-  },
   {
    "fieldname": "items",
    "fieldtype": "Table",
@@ -31,7 +22,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Stock Reconciliation",
+   "options": "Stock Adjustment",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -47,10 +38,10 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-10 13:01:18.234948",
+ "modified": "2025-04-02 03:45:34.915758",
  "modified_by": "Administrator",
  "module": "Inventory",
- "name": "Stock Reconciliation",
+ "name": "Stock Adjustment",
  "owner": "Administrator",
  "permissions": [
   {

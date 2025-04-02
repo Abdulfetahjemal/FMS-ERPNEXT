@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestStockReconciliation(FrappeTestCase):
+class TestStockAdjustment(FrappeTestCase):
 	pass

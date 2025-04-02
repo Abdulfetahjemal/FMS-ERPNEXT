@@ -71,7 +71,7 @@
   },
   {
    "fieldname": "color",
-   "fieldtype": "Data",
+   "fieldtype": "Color",
    "label": "Color"
   },
   {
@@ -106,7 +106,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-01 21:57:56.685722",
+ "modified": "2025-04-02 00:19:32.545894",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Item",
