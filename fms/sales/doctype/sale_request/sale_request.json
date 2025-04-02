@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SR-{client}-{YY}-{MM}-{DD}-{######}",
+ "creation": "2025-02-28 20:38:10.136494",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client",
+  "column_break_hthg",
+  "name1",
+  "column_break_tcxi",
+  "phone",
+  "section_break_yjve",
+  "sale_request_items",
+  "status",
+  "total_price",
+  "remark",
+  "sales_office_approver",
+  "sales_stock_approver",
+  "sales_site_approver",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_office_approver",
+   "fieldtype": "Link",
+   "label": "Sales Office Approver",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "default": "Pending Office Approval",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_stock_approver",
+   "fieldtype": "Link",
+   "label": "Sales Stock Approver",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_site_approver",
+   "fieldtype": "Link",
+   "label": "Sales Site Approver",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sale Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "client.phone_number",
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.name1",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_price",
+   "fieldtype": "Float",
+   "label": "Total Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_yjve",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hthg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tcxi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sale_request_items",
+   "fieldtype": "Table",
+   "label": "Item Table",
+   "options": "Sale Request Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-04-02 20:01:35.464483",
+ "modified_by": "Administrator",
+ "module": "Sales",
+ "name": "Sale Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

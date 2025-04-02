@@ -8,6 +8,8 @@
  "field_order": [
   "name1",
   "uom",
+  "weight",
+  "cost",
   "default_warehouse",
   "stock_info",
   "image",
@@ -64,12 +66,22 @@
    "label": "UOM",
    "options": "UOM",
    "reqd": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-01 22:23:24.809743",
+ "modified": "2025-04-02 17:33:15.485144",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Finished Good Registration",

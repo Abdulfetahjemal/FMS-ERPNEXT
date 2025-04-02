@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Ledger-{MM}-{DD}-{type}-{reference}",
+ "autoname": "format:Ledger-{YY}-{MM}-{DD}-{type}-{reference_type}-{#####}",
  "creation": "2025-02-28 20:43:52.884872",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -19,7 +19,6 @@
    "depends_on": "eval:doc.type == 'Stock Transfer'",
    "fieldname": "target_warehouse",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Target Warehouse",
    "mandatory_depends_on": "eval:doc.type == \"Stock Transfer\"",
    "options": "Warehouses",
@@ -43,6 +42,7 @@
   {
    "fieldname": "reference_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Reference Type ",
    "options": "DocType",
    "set_only_once": 1
@@ -70,7 +70,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-02 10:51:28.688299",
+ "modified": "2025-04-02 21:26:14.233246",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Ledger",

@@ -6,9 +6,7 @@ from frappe.model.document import Document
 
 
 class StockLedger(Document):
-    def on_submit(self):
-        """On Stock Ledger submit, update or create Stock Ledger Entries."""
-        self.process_stock_ledger_entries()
+    
 
     def on_cancel(self):
         """On Stock Ledger cancel, cancel the linked Stock Ledger Entries."""
@@ -20,17 +18,18 @@ class StockLedger(Document):
 
     def before_save(self):
         """Before saving, temporarily store the qty_change value."""
+        # frappe.msgprint("Saving Stock Ledger Entry.")
         for item_data in self.item_info:
-            item_data._temp_qty_change = item_data.quantity
+            if hasattr(item_data, "quantity"):
+                item_data._temp_qty_change = item_data.get_db_value("quantity")
+            else:
+                frappe.throw(f"Item data is missing the 'quantity' attribute for item: {item_data}")
 
     def on_update(self):
+        # frappe.msgprint("Saving Stock Ledger Entry.")
         """On Stock Ledger update, update the Stock Ledger Entries."""
         self.process_stock_ledger_entries()
 
-    def after_insert(self):
-        """After inserting, update the Stock Ledger Entries."""
-        frappe.msgprint("Stock Ledger Entry has been saved successfully.")
-        self.process_stock_ledger_entries()
 
     def process_stock_ledger_entries(self, cancel=False, delete=False):
         """
@@ -129,6 +128,8 @@ class StockLedger(Document):
                     "item_code": item_code,
                     "item_name": item_code,
                     "uom": item_details.get("uom", "Nos"),
+                    "weight": item_details.get("weight", 0.0),
+                    "cost": item_details.get("cost", 0.0),
                     "default_warehouse": item_details.get("default_warehouse")
                 })
                 item.save(ignore_permissions=True)

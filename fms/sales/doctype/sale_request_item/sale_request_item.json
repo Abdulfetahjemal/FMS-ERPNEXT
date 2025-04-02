@@ -1,18 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-03-08 07:15:48.518324",
+ "creation": "2025-03-11 19:27:49.217269",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item",
   "quantity",
-  "uom",
-  "warehouse",
-  "batch_no",
-  "serial_no",
-  "rate"
+  "cost",
+  "calculated_price",
+  "warehouse"
  ],
  "fields": [
   {
@@ -24,35 +22,30 @@
    "reqd": 1
   },
   {
-   "fieldname": "quantity",
+   "fieldname": "calculated_price",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Quantity",
+   "label": "Calculated Price",
+   "read_only": 1,
    "reqd": 1
   },
   {
-   "fetch_from": "item.uom",
-   "fieldname": "uom",
-   "fieldtype": "Link",
+   "fetch_from": "item.cost",
+   "fieldname": "cost",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "UOM",
-   "options": "UOM",
+   "label": "Cost",
+   "read_only": 1,
    "reqd": 1
   },
   {
-   "fieldname": "rate",
-   "fieldtype": "Data",
-   "label": "Rate"
-  },
-  {
-   "fieldname": "serial_no",
-   "fieldtype": "Date",
-   "label": "Serial No"
-  },
-  {
-   "fieldname": "batch_no",
-   "fieldtype": "Data",
-   "label": "Batch No"
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fetch_from": "item.default_warehouse",
@@ -60,17 +53,16 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Warehouse",
-   "options": "Warehouses",
-   "reqd": 1
+   "options": "Warehouses"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-04-02 20:06:55.214345",
+ "modified": "2025-04-02 20:38:38.968561",
  "modified_by": "Administrator",
- "module": "Inventory",
- "name": "Stock Entry Items",
+ "module": "Sales",
+ "name": "Sale Request Item",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
