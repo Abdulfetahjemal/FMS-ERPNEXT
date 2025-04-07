@@ -7,7 +7,7 @@ import frappe
 
 
 class ClientBalanceHistory(Document):
-    def on_update(self):
+    def before_submit(self):
                 
         # Update the Client's balance
         client = frappe.get_doc("Client", self.client)

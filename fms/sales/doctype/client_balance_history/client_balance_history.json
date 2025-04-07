@@ -66,9 +66,8 @@
   },
   {
    "fieldname": "reference",
-   "fieldtype": "Dynamic Link",
-   "label": "Reference",
-   "options": "document_type"
+   "fieldtype": "Data",
+   "label": "Reference"
   },
   {
    "fieldname": "amended_from",
@@ -84,7 +83,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-07 19:54:12.888284",
+ "modified": "2025-04-07 22:02:53.508413",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Client Balance History",

@@ -40,5 +40,45 @@ frappe.ui.form.on("Production Plan", {
         } else {
             frm.set_value('formula', ''); // Clear if finished good is cleared
         }
+    },
+    batch: function(frm) {
+        if (frm.doc.formula && frm.doc.batch) {
+            frappe.call({
+                method: "frappe.client.get_value",
+                args: {
+                    doctype: "Finished Good Formula",
+                    filters: {name: frm.doc.formula},
+                    fieldname: ["estimated_production"]
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let estimated_production = r.message.estimated_production;
+                        frm.set_value("estimated_production", estimated_production * frm.doc.batch);
+                    }
+                }
+            });
+        } else {
+            frm.set_value("estimated_production", 0);
+        }
+    },
+    formula: function(frm) {
+         if (frm.doc.formula && frm.doc.batch) {
+            frappe.call({
+                method: "frappe.client.get_value",
+                args: {
+                    doctype: "Finished Good Formula",
+                    filters: {name: frm.doc.formula},
+                    fieldname: ["estimated_production"]
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        let estimated_production = r.message.estimated_production;
+                        frm.set_value("estimated_production", estimated_production * frm.doc.batch);
+                    }
+                }
+            });
+        } else {
+            frm.set_value("estimated_production", 0);
+        }
     }
 });
