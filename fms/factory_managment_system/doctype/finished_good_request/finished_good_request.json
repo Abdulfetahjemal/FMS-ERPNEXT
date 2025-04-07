@@ -1,15 +1,20 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format: Request-{finished_good}-{##########}",
  "creation": "2025-02-28 20:22:47.760113",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "finished_good",
   "quantity",
+  "batch",
+  "warehouse",
   "approver",
   "remark",
-  "status"
+  "status",
+  "production_plan",
+  "amended_from"
  ],
  "fields": [
   {
@@ -17,11 +22,45 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Finished Good",
-   "options": "Finished Good Registration",
+   "options": "Item",
    "reqd": 1
   },
   {
    "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "warehouse.contact",
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "Employee",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark",
+   "reqd": 1
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Link",
+   "label": "Production Plan",
+   "options": "Production Plan"
+  },
+  {
+   "fieldname": "batch",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Batch",
@@ -30,31 +69,31 @@
    "reqd": 1
   },
   {
-   "default": "Pending",
-   "fieldname": "status",
-   "fieldtype": "Data",
-   "label": "Status"
-  },
-  {
-   "fieldname": "approver",
+   "fieldname": "amended_from",
    "fieldtype": "Link",
-   "label": "Approver",
-   "options": "Employee",
-   "reqd": 1
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finished Good Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   },
   {
-   "fieldname": "remark",
-   "fieldtype": "Data",
-   "label": "Remark",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouses",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-03-07 18:46:00.560839",
+ "modified": "2025-04-07 16:49:59.488837",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Request",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

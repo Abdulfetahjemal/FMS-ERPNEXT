@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class StockTransfer(Document):
+class WorkStockTransferRequest(Document):
 	pass

@@ -31,9 +31,13 @@
    "set_only_once": 1
   },
   {
+   "default": "0",
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Qty"
+   "in_list_view": 1,
+   "label": "Qty",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fetch_from": "item.uom",
@@ -46,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-10 13:37:51.921864",
+ "modified": "2025-04-07 17:21:18.424279",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Balance",

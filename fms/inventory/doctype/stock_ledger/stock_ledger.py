@@ -5,6 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
+
 class StockLedger(Document):
     
 
@@ -24,11 +25,13 @@ class StockLedger(Document):
                 item_data._temp_qty_change = item_data.get_db_value("quantity")
             else:
                 frappe.throw(f"Item data is missing the 'quantity' attribute for item: {item_data}")
+        self.validate_stock_balance()
 
     def on_update(self):
         # frappe.msgprint("Saving Stock Ledger Entry.")
         """On Stock Ledger update, update the Stock Ledger Entries."""
         self.process_stock_ledger_entries()
+
 
 
     def process_stock_ledger_entries(self, cancel=False, delete=False):
@@ -89,6 +92,7 @@ class StockLedger(Document):
         else:
             stock_entry.qty_change = qty_change
             self.update_stock_balance(stock_entry.item_code, stock_entry.warehouse, qty_change, previous_qty_change)
+            stock_entry.insert(ignore_permissions=True)
             stock_entry.save(ignore_permissions=True)
 
     def create_stock_ledger_entry(self, item_code, warehouse, qty_change):
@@ -103,7 +107,9 @@ class StockLedger(Document):
             "qty_change": qty_change,
             "stock_ledger": self.name
         })
+        stock_entry.insert()
         stock_entry.save(ignore_permissions=True)
+
         self.update_stock_balance(item_code, warehouse, qty_change)
 
     def handle_orphaned_entries(self, existing_entry_names, cancel, delete):
@@ -132,6 +138,7 @@ class StockLedger(Document):
                     "cost": item_details.get("cost", 0.0),
                     "default_warehouse": item_details.get("default_warehouse")
                 })
+                item.insert()
                 item.save(ignore_permissions=True)
             except Exception as e:
                 frappe.log_error(f"Error creating item {item_code}: {e}", "Stock Ledger")
@@ -166,4 +173,28 @@ class StockLedger(Document):
                 "warehouse": warehouse,
                 "qty": new_stock_balance
             })
+            
             stock_balance_doc.insert()
+            stock_balance_doc.save()
+    
+    def validate_stock_balance(self):
+        """
+        Validates if the warehouse has enough stock of the item before saving.
+        """
+        if self.type == "Stock Out":
+            for item_data in self.item_info:
+                item_code = item_data.item
+                warehouse = item_data.warehouse
+                qty_change = item_data.quantity
+
+                stock_balance = frappe.db.get_value(
+                    "Stock Balance",
+                    {"item": item_code, "warehouse": warehouse},
+                    "qty"
+                ) or 0
+
+                if stock_balance < qty_change:
+                    frappe.throw(
+                        f"Warehouse {warehouse} does not have enough stock of Item {item_code}. "
+                        f"Available quantity: {stock_balance}, Requested quantity: {qty_change}"
+                    )

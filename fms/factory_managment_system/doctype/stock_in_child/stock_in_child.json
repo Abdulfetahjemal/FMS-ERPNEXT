@@ -17,7 +17,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Raw Materials",
-   "options": "Raw Materials",
+   "options": "Item",
    "reqd": 1
   },
   {
@@ -29,7 +29,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "raw_materials.link_ckqv",
+   "fetch_from": "raw_materials.uom",
    "fieldname": "unit",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -48,7 +48,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-02 07:09:10.488403",
+ "modified": "2025-04-07 13:59:38.230746",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Stock In Child",

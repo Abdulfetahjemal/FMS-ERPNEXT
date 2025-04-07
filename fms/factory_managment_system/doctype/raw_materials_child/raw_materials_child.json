@@ -6,19 +6,11 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "raw_materials",
+  "raw_material",
   "quantity",
   "unit"
  ],
  "fields": [
-  {
-   "fieldname": "raw_materials",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Raw Materials",
-   "options": "Raw Materials Registration",
-   "reqd": 1
-  },
   {
    "fieldname": "quantity",
    "fieldtype": "Float",
@@ -28,19 +20,27 @@
    "reqd": 1
   },
   {
-   "fetch_from": "raw_materials.link_ckqv",
+   "fetch_from": "raw_material.uom",
    "fieldname": "unit",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Unit",
    "options": "UOM",
    "reqd": 1
+  },
+  {
+   "fieldname": "raw_material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Raw Material",
+   "options": "Item",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-07 18:41:08.289064",
+ "modified": "2025-04-07 14:32:30.104880",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Raw Materials Child",

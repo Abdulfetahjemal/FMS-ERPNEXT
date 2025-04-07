@@ -9,7 +9,9 @@
   "to_shift_manager",
   "raw_material",
   "quantity",
-  "status"
+  "status",
+  "remark",
+  "amended_from"
  ],
  "fields": [
   {
@@ -48,15 +50,32 @@
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Work Stock Transfer Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-03-07 18:41:08.385732",
+ "modified": "2025-04-07 18:44:11.083634",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Stock Transfer Request",
+ "name": "Work Stock Transfer Request",
  "owner": "Administrator",
  "permissions": [
   {

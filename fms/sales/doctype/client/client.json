@@ -8,7 +8,8 @@
  "field_order": [
   "name1",
   "phone_number",
-  "address"
+  "address",
+  "balance"
  ],
  "fields": [
   {
@@ -33,11 +34,18 @@
    "in_list_view": 1,
    "label": "Address",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-11 19:36:21.135868",
+ "modified": "2025-04-07 18:52:45.288305",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Client",

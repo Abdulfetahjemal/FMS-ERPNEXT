@@ -38,7 +38,7 @@
    "read_only": 1
   },
   {
-   "default": "Pending Office Approval",
+   "default": "Pending Sales Approval",
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status",
@@ -116,7 +116,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-02 20:01:35.464483",
+ "modified": "2025-04-07 20:38:13.157157",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Sale Request",

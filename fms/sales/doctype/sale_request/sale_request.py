@@ -3,8 +3,8 @@ from frappe.model.document import Document
 
 
 class SaleRequest(Document):
-    # begin: auto-generated types
-    # This code is auto-generated. Do not modify anything in this block.
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
 
 	from typing import TYPE_CHECKING
 
@@ -30,6 +30,15 @@ class SaleRequest(Document):
 		if self.status == "Pending Sales Approval" and self.status != old_status:
 			frappe.msgprint("Sale Request is pending for sales approval.")
 			self.sales_office_approver = frappe.session.user
+			# Create Client Balance History
+			client_balance_history = frappe.new_doc("Client Balance History")
+			client_balance_history.client = self.client
+			client_balance_history.amount_change = self.total_price * -1  # Or calculate the actual amount change
+			client_balance_history.date = frappe.utils.today()
+			client_balance_history.type = "Sale"  # Or any relevant type
+			client_balance_history.document_type = "Sale Request"
+			client_balance_history.reference = self.name
+			client_balance_history.save()
 
 		elif self.status == "Pending Site Approval" and self.status != old_status:
 			frappe.msgprint("Sale Request is pending for site approval.")
@@ -67,7 +76,7 @@ class SaleRequest(Document):
 						f"Requested: {requested_qty}, Available: {available_stock}."
 					)
 
-	def on_submit(self):	
+	def on_submit(self):
 		stock_ledger = frappe.new_doc("Stock Ledger")
 		stock_ledger.type = "Stock Out"
 		stock_ledger.reference_type = "Sale Request"
@@ -81,5 +90,10 @@ class SaleRequest(Document):
 				"warehouse": item.warehouse
 			})
 
-		stock_ledger.save()
+		stock_ledger.insert()  # Use insert() before submit() for new documents
 		
+		# Get Client Balance History
+		client_balance_history_name = frappe.db.get_value("Client Balance History", {"reference": self.name})
+		if client_balance_history_name:
+			client_balance_history = frappe.get_doc("Client Balance History", client_balance_history_name)
+			client_balance_history.submit()

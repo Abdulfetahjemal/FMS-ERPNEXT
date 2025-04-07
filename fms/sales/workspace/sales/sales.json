@@ -1,0 +1,71 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"lBhGbOPIHR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"_92lfIBZUM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New Sales\",\"col\":12}},{\"id\":\"XLye2St17w\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Awaiting Approvals\",\"col\":6}},{\"id\":\"ji5vzR4rTU\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Approved Sales\",\"col\":6}}]",
+ "creation": "2025-04-07 15:29:16.464628",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Sales",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales",
+   "link_count": 0,
+   "link_to": "Sale Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client",
+   "link_count": 0,
+   "link_to": "Client",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-04-07 18:51:21.786588",
+ "modified_by": "Administrator",
+ "module": "Sales",
+ "name": "Sales",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Sale Request",
+   "label": "Approved Sales",
+   "quick_list_filter": "[[\"Sale Request\",\"status\",\"like\",\"%Approved%\",false]]"
+  },
+  {
+   "document_type": "Sale Request",
+   "label": "Awaiting Approvals",
+   "quick_list_filter": "[[\"Sale Request\",\"status\",\"not like\",\"%Approved%\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "New",
+   "format": "{}",
+   "label": "Create New Sales",
+   "link_to": "Sale Request",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Sales"
+}

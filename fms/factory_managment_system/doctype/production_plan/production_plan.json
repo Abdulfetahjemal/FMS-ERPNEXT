@@ -1,17 +1,20 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:PP-{finished_good}-{#######}",
  "creation": "2025-02-28 12:37:28.424687",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "finished_good",
-  "quantity",
+  "batch",
   "formula",
   "approver",
   "shift_leader",
   "remark",
-  "status"
+  "status",
+  "production_plan_and_estimates",
+  "amended_from"
  ],
  "fields": [
   {
@@ -19,16 +22,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Finished Good",
-   "options": "Finished Good Registration",
-   "reqd": 1
-  },
-  {
-   "default": "1",
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Quantity/Batch",
-   "non_negative": 1,
+   "options": "Item",
    "reqd": 1
   },
   {
@@ -36,6 +30,7 @@
    "fieldtype": "Link",
    "label": "Formula",
    "options": "Finished Good Formula",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -63,15 +58,41 @@
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Batch",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "production_plan_and_estimates",
+   "fieldtype": "HTML",
+   "label": "Production Plan and Estimates "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Production Plan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-03-07 18:46:00.458424",
+ "modified": "2025-04-07 16:02:46.724224",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Production Plan",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -87,7 +108,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

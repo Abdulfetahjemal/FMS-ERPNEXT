@@ -29,7 +29,8 @@
    "fieldname": "contact",
    "fieldtype": "Link",
    "label": "Contact",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1
   },
   {
    "fieldname": "capacity",
@@ -39,7 +40,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-10 08:50:25.723020",
+ "modified": "2025-04-07 16:46:38.316369",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Warehouses",

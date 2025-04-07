@@ -1,33 +1,42 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Formula-{finished_good}-{#############}",
  "creation": "2025-02-28 12:34:59.324225",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "finished_good",
-  "raw_materials"
+  "raw_materials",
+  "active"
  ],
  "fields": [
   {
    "fieldname": "finished_good",
    "fieldtype": "Link",
    "label": "Finished Good",
-   "options": "Finished Good Registration"
+   "options": "Item"
   },
   {
    "fieldname": "raw_materials",
    "fieldtype": "Table",
    "label": "Raw Materials",
    "options": "Raw Materials Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-07 18:46:00.346096",
+ "modified": "2025-04-07 14:34:09.054063",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Formula",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

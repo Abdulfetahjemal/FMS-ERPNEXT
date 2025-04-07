@@ -51,61 +51,77 @@ def populate_stock_balance_for_item(item_name):
         frappe.log_error(f"Error in populate_stock_balance_for_item: {e}", "Stock Balance")
 
 def update_item_inventory_count(item_name):
-	"""
-	Updates the Item's inventory_count to the sum of all Stock Balance quantities
-	for the given item.  This function runs in the background.
+    """
+    Updates the Item's inventory_count to the sum of all Stock Balance quantities
+    for the given item.  This function runs in the background.
 
-	Args:
-		item_name (str): The name of the Item to update.
-	"""
-	try:
-		frappe.logger("Stock Balance", "DEBUG").info(
-			f"Starting background job to update inventory count for Item: {item_name}"
-		)
-		# 1. Calculate the sum of quantities for the item.
-		total_qty = frappe.db.get_value(
-			"Stock Balance",  # DocType to query
-			{"item": item_name},  # Filters: Stock Balance for this item
-			"SUM(qty)",  # Field to sum
-		)
-		total_qty = total_qty or 0  # Ensure total_qty is 0 if None
+    Args:
+        item_name (str): The name of the Item to update.
+    """
+    try:
+        frappe.logger("Stock Balance", "DEBUG").info(
+            f"Starting background job to update inventory count for Item: {item_name}"
+        )
 
-		# 2. Get the Item document.
-		item_doc = frappe.get_doc("Item", item_name)
-		# 3. Update the inventory count.
-		item_doc.inventory_count = total_qty
-		# 4. Save the Item document.
-		item_doc.save()
-		frappe.logger("Stock Balance").info(
-			f"Item {item_name} inventory_count updated to {total_qty} (sum of Stock Balances) in background"
-		)
-	except frappe.DoesNotExistError:
-		# Handle the case where the Item doesn't exist.
-		frappe.log_error(
-			f"Item {item_name} not found while updating inventory_count in background",
-			"Stock Balance",
-		)
-	except Exception as e:
-		frappe.log_error(
-			f"Error updating Item {item_name} inventory_count in background: {e}",
-			"Stock Balance",
-		)
-		frappe.msgprint(f"Error updating Item {item_name} inventory count in the background. Check logs.")
+        # 1. Calculate the sum of quantities for the item, using FOR UPDATE to lock rows.
+        #    This prevents race conditions during concurrent updates.
+        total_qty = frappe.db.sql(
+            """
+            SELECT SUM(qty)
+            FROM `tabStock Balance`
+            WHERE item = %s
+            FOR UPDATE
+            """,
+            (item_name,),
+            as_dict=False,  # Important:  We want a simple value, not a dict
+        )[0][0] or 0  # Extract the value from the result
+
+        total_qty = total_qty or 0  # Ensure total_qty is 0 if None
+
+        # 2. Get the Item document.
+        item_doc = frappe.get_doc("Item", item_name)
+
+        # 3. Update the inventory count.
+        item_doc.inventory_count = total_qty
+
+        # 4. Save the Item document.
+        item_doc.save()
+
+        frappe.logger("Stock Balance").info(
+            f"Item {item_name} inventory_count updated to {total_qty} (sum of Stock Balances) in background"
+        )
+
+    except frappe.DoesNotExistError:
+        # Handle the case where the Item doesn't exist.
+        frappe.log_error(
+            f"Item {item_name} not found while updating inventory_count in background",
+            "Stock Balance",
+        )
+    except Exception as e:
+        frappe.log_error(
+            f"Error updating Item {item_name} inventory_count in background: {e}",
+            "Stock Balance",
+        )
+        frappe.msgprint(f"Error updating Item {item_name} inventory count in the background. Check logs.")
 
 
 class StockBalance(Document):
-	def on_update(self):
-		"""
-		Updates the Item's inventory_count to the sum of all Stock Balance quantities
-		for that item.
-		"""
-		enqueue(
-			update_item_inventory_count,  # Function to run in the background
-			item_name=self.item,  # Argument to pass to the function
-			job_name=f"update_item_inventory_{self.item}", #give it a unique name
-			#  The job name should be unique.  Including the item name makes it unique.
-			is_async=True  # Run the job asynchronously
-		)
-		frappe.logger("Stock Balance").info(
-			f"Background job enqueued to update inventory count for Item: {self.item} from Stock Balance {self.name}"
-		)
+    def validate(self):
+        if self.qty < 0:
+            frappe.throw(f"Warehouse does not have enough stock of Item {self.item}")
+    def on_update(self):
+        """
+        Updates the Item's inventory_count to the sum of all Stock Balance quantities
+        for that item.
+        """
+        frappe.msgprint("Updating inventory count for item: " + self.item)
+        enqueue(
+            update_item_inventory_count,  # Function to run in the background
+            item_name=self.item,  # Argument to pass to the function
+            job_name=f"update_item_inventory_{self.item}", #give it a unique name
+            #  The job name should be unique.  Including the item name makes it unique.
+            is_async=True  # Run the job asynchronously
+        )
+        frappe.logger("Stock Balance").info(
+            f"Background job enqueued to update inventory count for Item: {self.item} from Stock Balance {self.name}"
+        )
