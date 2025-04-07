@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"lBhGbOPIHR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"_92lfIBZUM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New Sales\",\"col\":12}},{\"id\":\"XLye2St17w\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Awaiting Approvals\",\"col\":6}},{\"id\":\"ji5vzR4rTU\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Approved Sales\",\"col\":6}}]",
+ "content": "[{\"id\":\"lBhGbOPIHR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"XLye2St17w\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Awaiting Approvals\",\"col\":6}},{\"id\":\"ji5vzR4rTU\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Approved Sales\",\"col\":6}},{\"id\":\"OnKrjYYWVk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Client</b></span>\",\"col\":12}},{\"id\":\"MJRAANFUN1\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Client\",\"col\":6}},{\"id\":\"FBm2Wuy37G\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Balance Log\",\"col\":6}}]",
  "creation": "2025-04-07 15:29:16.464628",
  "custom_blocks": [],
  "docstatus": 0,
@@ -34,7 +34,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-04-07 18:51:21.786588",
+ "modified": "2025-04-07 21:03:50.056742",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Sales",
@@ -49,6 +49,16 @@
    "quick_list_filter": "[[\"Sale Request\",\"status\",\"like\",\"%Approved%\",false]]"
   },
   {
+   "document_type": "Client",
+   "label": "Client",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Client Balance History",
+   "label": "Balance Log",
+   "quick_list_filter": "[]"
+  },
+  {
    "document_type": "Sale Request",
    "label": "Awaiting Approvals",
    "quick_list_filter": "[[\"Sale Request\",\"status\",\"not like\",\"%Approved%\",false]]"
@@ -56,16 +66,6 @@
  ],
  "roles": [],
  "sequence_id": 28.0,
- "shortcuts": [
-  {
-   "color": "Green",
-   "doc_view": "New",
-   "format": "{}",
-   "label": "Create New Sales",
-   "link_to": "Sale Request",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Sales"
 }
