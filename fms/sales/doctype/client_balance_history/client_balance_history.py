@@ -15,8 +15,8 @@ class ClientBalanceHistory(Document):
         # Check if this is not the first Client Balance History entry
         if frappe.db.count("Client Balance History", {"client": self.client}) > 1:
             current_balance = client.balance or 0  # Get current balance, default to 0 if None
-            if self.amount_change < 0 and abs(self.amount_change) > current_balance:
-                frappe.throw("Client does not have the balance for the sale")
+            # if self.amount_change < 0 and abs(self.amount_change) > current_balance:
+            #     frappe.throw("Client does not have the balance for the sale")
             new_balance = current_balance + self.amount_change
             self.new_balance = new_balance
             client.db_set("balance", new_balance)
