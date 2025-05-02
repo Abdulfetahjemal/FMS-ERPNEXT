@@ -1,36 +1,40 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-05-01 21:51:33.151598",
+ "creation": "2025-05-01 09:49:14.878318",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "site",
-  "stored"
+  "storage_section",
+  "stored",
+  "by_production"
  ],
  "fields": [
   {
-   "fieldname": "site",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Site",
-   "options": "Site",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "stored",
    "fieldtype": "Table",
-   "label": "Stored",
-   "options": "Factory Floor Item"
+   "label": "Used",
+   "options": "Factory Floor Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "storage_section",
+   "fieldtype": "Section Break",
+   "label": "Used"
+  },
+  {
+   "fieldname": "by_production",
+   "fieldtype": "Link",
+   "label": "By Production",
+   "options": "Production Plan"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-01 21:53:23.241207",
+ "modified": "2025-05-01 10:12:12.457000",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Factory Floor",
+ "name": "Factory Floor Used",
  "owner": "Administrator",
  "permissions": [
   {

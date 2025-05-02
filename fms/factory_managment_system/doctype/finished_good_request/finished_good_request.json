@@ -7,14 +7,18 @@
  "engine": "InnoDB",
  "field_order": [
   "finished_good",
-  "quantity",
   "batch",
   "warehouse",
-  "approver",
+  "column_break_ffex",
+  "quantity",
   "remark",
-  "status",
+  "approver",
+  "column_break_waih",
+  "estimated",
+  "section_break_ifqx",
   "production_plan",
-  "amended_from"
+  "amended_from",
+  "status"
  ],
  "fields": [
   {
@@ -23,12 +27,13 @@
    "in_list_view": 1,
    "label": "Finished Good",
    "options": "Item",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Float",
-   "label": "Quantity",
+   "label": "Produced Quantity",
    "reqd": 1
   },
   {
@@ -60,12 +65,14 @@
    "options": "Production Plan"
   },
   {
+   "fetch_from": "production_plan.batch",
    "fieldname": "batch",
-   "fieldtype": "Float",
+   "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Batch",
    "non_negative": 1,
    "precision": "2",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -79,17 +86,37 @@
    "search_index": 1
   },
   {
+   "fetch_from": "finished_good.default_warehouse",
    "fieldname": "warehouse",
    "fieldtype": "Link",
    "label": "Warehouse",
    "options": "Warehouses",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ffex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_waih",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "production_plan.estimated_production",
+   "fieldname": "estimated",
+   "fieldtype": "Float",
+   "label": "Estimated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ifqx",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-07 16:49:59.488837",
+ "modified": "2025-04-30 19:59:03.069996",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Request",

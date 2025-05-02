@@ -5,16 +5,20 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "shift_details_section",
   "from_shift_manager",
   "to_shift_manager",
-  "raw_material",
-  "quantity",
+  "column_break_ughw",
   "status",
   "remark",
-  "amended_from"
+  "amended_from",
+  "production_plan",
+  "section_break_munp",
+  "transferring"
  ],
  "fields": [
   {
+   "fetch_from": "production_plan.shift_leader",
    "fieldname": "from_shift_manager",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -28,22 +32,6 @@
    "in_list_view": 1,
    "label": "To Shift Manager",
    "options": "Employee",
-   "reqd": 1
-  },
-  {
-   "fieldname": "raw_material",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Raw Material",
-   "options": "Raw Materials Registration",
-   "reqd": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Quantity",
-   "non_negative": 1,
    "reqd": 1
   },
   {
@@ -67,12 +55,39 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Link",
+   "label": "Production Plan",
+   "options": "Production Plan",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ughw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_munp",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "transferring",
+   "fieldtype": "Table",
+   "label": "Transferring",
+   "options": "Factory Floor Item"
+  },
+  {
+   "fieldname": "shift_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shift Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-07 18:44:11.083634",
+ "modified": "2025-05-01 09:37:32.407890",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Work Stock Transfer Request",

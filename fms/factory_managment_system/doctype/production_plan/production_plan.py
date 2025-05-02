@@ -28,6 +28,8 @@ class ProductionPlan(Document):
             )
     def on_submit(self):
         self.create_stock_out()
+        self.create_factory_floor_received()
+
     def create_stock_out(self):
         formula = frappe.get_doc("Finished Good Formula", self.formula)
         stock_ledger = frappe.new_doc("Stock Ledger")
@@ -45,6 +47,22 @@ class ProductionPlan(Document):
             })
 
         stock_ledger.save()
+
+    def create_factory_floor_received(self):
+        """Creates a Factory Floor Received document upon Production Plan submission."""
+        factory_floor_received = frappe.new_doc("Factory Floor Received")
+        factory_floor_received.production_plan = self.name
+        factory_floor_received.finished_good = self.finished_good
+        factory_floor_received.batch = self.batch
+        factory_floor_received.formula = self.formula
+        factory_floor_received.approver = self.approver
+        factory_floor_received.shift_leader = self.shift_leader
+        factory_floor_received.remark = self.remark
+        factory_floor_received.estimated_production = self.estimated_production
+        # You might want to add logic to copy raw materials from the formula to the Factory Floor Received as well
+
+        factory_floor_received.insert(ignore_permissions=True)
+        frappe.db.commit()
 
 # --- Whitelisted function added below ---
 @frappe.whitelist()

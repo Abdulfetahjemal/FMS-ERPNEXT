@@ -1,36 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-05-01 21:51:33.151598",
+ "creation": "2025-04-30 18:41:08.384849",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "site",
-  "stored"
+  "site_employee",
+  "received",
+  "production_plan"
  ],
  "fields": [
   {
-   "fieldname": "site",
+   "fieldname": "site_employee",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Site",
-   "options": "Site",
-   "reqd": 1,
-   "unique": 1
+   "label": "Site Employee",
+   "options": "Employee"
   },
   {
-   "fieldname": "stored",
+   "fieldname": "received",
    "fieldtype": "Table",
-   "label": "Stored",
+   "label": "Received",
    "options": "Factory Floor Item"
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Link",
+   "label": "For Production Plan",
+   "options": "Production Plan",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-01 21:53:23.241207",
+ "modified": "2025-05-01 09:47:50.063796",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Factory Floor",
+ "name": "Factory Floor Recived",
  "owner": "Administrator",
  "permissions": [
   {

@@ -17,7 +17,7 @@ class Client(Document):
 
         address: DF.Data
         name1: DF.Data
-        phone_number: DF.Phone
+        phone_number: DF.Phones
     # end: auto-generated types
 
     def after_insert(self):
