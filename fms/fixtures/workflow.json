@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "Production Plan",
   "is_active": 1,
-  "modified": "2025-04-07 16:32:26.279102",
+  "modified": "2025-05-02 07:00:20.044270",
   "name": "Production Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -22,7 +22,22 @@
     "state": "Pending",
     "update_field": "status",
     "update_value": "Production Requested",
-    "workflow_builder_id": null
+    "workflow_builder_id": "1"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Production Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Approved",
+    "update_field": "status",
+    "update_value": "Production Approved",
+    "workflow_builder_id": "2"
    },
    {
     "allow_edit": "All",
@@ -34,9 +49,9 @@
     "parent": "Production Workflow",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "Approved",
+    "state": "Finished",
     "update_field": "status",
-    "update_value": "Production Approved",
+    "update_value": "Production Finished",
     "workflow_builder_id": null
    },
    {
@@ -52,7 +67,7 @@
     "state": "Rejected",
     "update_field": "status",
     "update_value": "Production Denied",
-    "workflow_builder_id": null
+    "workflow_builder_id": "3"
    }
   ],
   "transitions": [
@@ -66,7 +81,7 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "state": "Pending",
-    "workflow_builder_id": null
+    "workflow_builder_id": "action-1"
    },
    {
     "action": "Reject",
@@ -78,10 +93,22 @@
     "parentfield": "transitions",
     "parenttype": "Workflow",
     "state": "Pending",
+    "workflow_builder_id": "action-2"
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Finished",
+    "parent": "Production Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Approved",
     "workflow_builder_id": null
    }
   ],
-  "workflow_data": null,
+  "workflow_data": "[{\"type\":\"state\",\"dimensions\":{\"width\":107,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":49.75,\"y\":-11,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":110.515625,\"y\":23,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":49.75,\"y\":57,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11,\"y\":23,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":550,\"y\":100,\"z\":0},\"id\":\"1\",\"position\":{\"x\":550,\"y\":100}},{\"type\":\"state\",\"dimensions\":{\"width\":117,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":54.921875,\"y\":-11,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":120.859375,\"y\":23,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":54.921875,\"y\":57,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11,\"y\":23,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":980.8655030800821,\"y\":279.0199178644764,\"z\":0},\"id\":\"2\",\"position\":{\"x\":980.8655030800821,\"y\":279.0199178644764}},{\"type\":\"state\",\"dimensions\":{\"width\":111,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":51.78125,\"y\":-11,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":114.5625,\"y\":23,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":51.78125,\"y\":57,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11,\"y\":23,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":1350,\"y\":100,\"z\":0},\"id\":\"3\",\"position\":{\"x\":1350,\"y\":100}},{\"type\":\"action\",\"dimensions\":{\"width\":78,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":36.125,\"y\":-2,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":74.25,\"y\":13.5,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":36.125,\"y\":29,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2,\"y\":13.5,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":791.7691991786448,\"y\":237.2889117043121,\"z\":0},\"id\":\"action-1\",\"position\":{\"x\":791.7691991786448,\"y\":237.2889117043121},\"data\":{\"from_id\":\"1\",\"to_id\":\"2\"}},{\"type\":\"action\",\"dimensions\":{\"width\":64,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":28.953125,\"y\":-2,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":59.90625,\"y\":13.5,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":28.953125,\"y\":29,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2,\"y\":13.5,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":791.7691991786446,\"y\":6.826488706365495,\"z\":0},\"id\":\"action-2\",\"position\":{\"x\":791.7691991786446,\"y\":6.826488706365495},\"data\":{\"from_id\":\"1\",\"to_id\":\"3\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-1\",\"updatable\":true,\"id\":\"edge-1-action-1\",\"animated\":true,\"sourceX\":667.515625,\"sourceY\":126.5,\"targetX\":789.7691991786448,\"targetY\":253.7889117043121},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-1\",\"target\":\"2\",\"updatable\":true,\"id\":\"edge-action-1-2\",\"animated\":true,\"sourceX\":872.0191991786448,\"sourceY\":253.7889117043121,\"targetX\":969.8655030800821,\"targetY\":305.5199178644764,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-2\",\"updatable\":true,\"id\":\"edge-1-action-2\",\"animated\":true,\"sourceX\":667.515625,\"sourceY\":126.5,\"targetX\":789.7691991786446,\"targetY\":23.326488706365495},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-2\",\"target\":\"3\",\"updatable\":true,\"id\":\"edge-action-2-3\",\"animated\":true,\"sourceX\":857.6754491786446,\"sourceY\":23.326488706365495,\"targetX\":1339,\"targetY\":126.5,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}}]",
   "workflow_name": "Production Workflow",
   "workflow_state_field": "workflow_state"
  },
