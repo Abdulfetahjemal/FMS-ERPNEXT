@@ -1,0 +1,65 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2025-03-19 16:19:58.843123",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "ok-sign",
+  "modified": "2025-03-19 16:19:58.844767",
+  "name": "Approved",
+  "style": "Success",
+  "workflow_state_name": "Approved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "remove",
+  "modified": "2025-03-19 16:19:58.846170",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-04-02 12:43:18.143222",
+  "name": "Sales Office Approval",
+  "style": "",
+  "workflow_state_name": "Sales Office Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-04-02 12:43:31.155669",
+  "name": "Sales Stock Approval",
+  "style": "",
+  "workflow_state_name": "Sales Stock Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-04-02 12:43:41.654491",
+  "name": "Sales Site Approval",
+  "style": "",
+  "workflow_state_name": "Sales Site Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-04-30 20:28:01.877007",
+  "name": "Finished",
+  "style": "Primary",
+  "workflow_state_name": "Finished"
+ }
+]

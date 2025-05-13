@@ -102,13 +102,14 @@
    "depends_on": "eval: doc.batch",
    "fieldname": "estimated_p",
    "fieldtype": "Float",
-   "label": "Estimated Production"
+   "label": "Estimated Production",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-14 01:08:06.165317",
+ "modified": "2025-05-14 01:13:06.364488",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Production Plan",
