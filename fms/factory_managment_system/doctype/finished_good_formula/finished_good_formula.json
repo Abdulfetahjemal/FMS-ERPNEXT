@@ -9,7 +9,7 @@
   "finished_good",
   "raw_materials",
   "active",
-  "estimated_production"
+  "estimated_p"
  ],
  "fields": [
   {
@@ -31,7 +31,7 @@
    "label": "Active"
   },
   {
-   "fieldname": "estimated_production",
+   "fieldname": "estimated_p",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Estimated Production",

@@ -47,17 +47,17 @@ frappe.ui.form.on("Production Plan", {
                 args: {
                     doctype: "Finished Good Formula",
                     filters: {name: frm.doc.formula},
-                    fieldname: ["estimated_production"]
+                    fieldname: ["estimated_p"]
                 },
                 callback: function(r) {
                     if (r.message) {
-                        let estimated_production = r.message.estimated_production;
-                        frm.set_value("estimated_production", estimated_production * frm.doc.batch);
+                        let estimated_p = r.message.estimated_p;
+                        frm.set_value("estimated_p", estimated_p * frm.doc.batch);
                     }
                 }
             });
         } else {
-            frm.set_value("estimated_production", 0);
+            frm.set_value("estimated_p", 0);
         }
     },
     formula: function(frm) {
@@ -67,17 +67,17 @@ frappe.ui.form.on("Production Plan", {
                 args: {
                     doctype: "Finished Good Formula",
                     filters: {name: frm.doc.formula},
-                    fieldname: ["estimated_production"]
+                    fieldname: ["estimated_p"]
                 },
                 callback: function(r) {
                     if (r.message) {
-                        let estimated_production = r.message.estimated_production;
-                        frm.set_value("estimated_production", estimated_production * frm.doc.batch);
+                        let estimated_p = r.message.estimated_p;
+                        frm.set_value("estimated_p", estimated_p * frm.doc.batch);
                     }
                 }
             });
         } else {
-            frm.set_value("estimated_production", 0);
+            frm.set_value("estimated_p", 0);
         }
     },
     refresh: function(frm) {
@@ -87,7 +87,7 @@ frappe.ui.form.on("Production Plan", {
                     production_plan: frm.doc.name, // Assuming you want to link the Production Plan
                     finished_good: frm.doc.finished_good, // Assuming you want to pre-fill the finished good
                     batch: frm.doc.batch, // Assuming you want to pre-fill the batch
-                    estimated: frm.doc.estimated_production, // Assuming you want to pre-fill the estimated production
+                    estimated: frm.doc.estimated_p, // Assuming you want to pre-fill the estimated production
                     // You can pre-fill other fields as needed
                 });
             });

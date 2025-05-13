@@ -102,7 +102,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "production_plan.estimated_production",
+   "fetch_from": "production_plan.estimated_p",
    "fieldname": "estimated",
    "fieldtype": "Float",
    "label": "Estimated",
