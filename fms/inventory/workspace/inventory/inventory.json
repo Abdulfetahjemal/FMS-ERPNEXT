@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Inventory",
  "links": [],
- "modified": "2025-05-13 11:43:44.093854",
+ "modified": "2025-05-13 12:32:18.918189",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Inventory",
@@ -30,7 +30,7 @@
   {
    "document_type": "Item",
    "label": "Item",
-   "quick_list_filter": "[[\"Item\",\"item_group\",\"=\",\"Finished Goods\",false]]"
+   "quick_list_filter": "[]"
   }
  ],
  "roles": [],
