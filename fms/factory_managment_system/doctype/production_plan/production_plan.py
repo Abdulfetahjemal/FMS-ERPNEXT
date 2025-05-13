@@ -26,9 +26,15 @@ class ProductionPlan(Document):
                 f"No active Finished Good Formula found for Finished Good: <strong>{self.finished_good}</strong>. Please create or activate a formula first.",
                 title="Missing Active Formula"
             )
-    def on_submit(self):
-        self.create_stock_out()
-        self.create_factory_floor_received()
+
+
+
+    def on_update(self):
+        
+        if self.status == "Production Approved":
+            self.create_stock_out()
+            self.create_factory_floor_received()
+
 
     def create_stock_out(self):
         formula = frappe.get_doc("Finished Good Formula", self.formula)
@@ -52,17 +58,19 @@ class ProductionPlan(Document):
         """Creates a Factory Floor Received document upon Production Plan submission."""
         factory_floor_received = frappe.new_doc("Factory Floor Received")
         factory_floor_received.production_plan = self.name
-        factory_floor_received.finished_good = self.finished_good
-        factory_floor_received.batch = self.batch
-        factory_floor_received.formula = self.formula
-        factory_floor_received.approver = self.approver
-        factory_floor_received.shift_leader = self.shift_leader
-        factory_floor_received.remark = self.remark
-        factory_floor_received.estimated_production = self.estimated_production
-        # You might want to add logic to copy raw materials from the formula to the Factory Floor Received as well
+        factory_floor_received.site_employee = self.shift_leader
+        # Copy raw materials from the formula to the Factory Floor Received
+        formula = frappe.get_doc("Finished Good Formula", self.formula)
+        for raw_material in formula.raw_materials:
+            factory_floor_received.append("received", {  
+                "item": raw_material.raw_material,
+                "measure": raw_material.quantity * self.batch,  # Adjust measure
+                "uom": raw_material.unit
+            })
 
-        factory_floor_received.insert(ignore_permissions=True)
-        frappe.db.commit()
+        factory_floor_received.docstatus = 1  # Set the status to Draft
+        factory_floor_received.save()
+
 
 # --- Whitelisted function added below ---
 @frappe.whitelist()

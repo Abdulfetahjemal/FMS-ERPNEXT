@@ -1,9 +1,18 @@
 # Copyright (c) 2025, birukassefa123@gmail.com and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
-
+from fms.factory_managment_system.doctype.factory_floor.factory_floor import update_factory_floor_used
 
 class FactoryFloorUsed(Document):
-	pass
+	def on_submit(self):
+		items = []
+		for item in self.received:
+			items.append({
+				"item": item.item,
+				"measure": item.measure,
+				"uom": item.uom
+			})
+		update_factory_floor_used(self.site, items)
+

@@ -7,7 +7,9 @@
  "field_order": [
   "storage_section",
   "stored",
-  "by_production"
+  "by_production",
+  "amended_from",
+  "site"
  ],
  "fields": [
   {
@@ -27,11 +29,30 @@
    "fieldtype": "Link",
    "label": "By Production",
    "options": "Production Plan"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Factory Floor Used",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "by_production.site",
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 10:12:12.457000",
+ "modified": "2025-05-02 07:31:32.496528",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Factory Floor Used",

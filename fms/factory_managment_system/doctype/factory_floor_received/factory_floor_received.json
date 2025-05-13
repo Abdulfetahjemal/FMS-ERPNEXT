@@ -7,7 +7,9 @@
  "field_order": [
   "site_employee",
   "received",
-  "production_plan"
+  "production_plan",
+  "site",
+  "amended_from"
  ],
  "fields": [
   {
@@ -28,14 +30,32 @@
    "label": "For Production Plan",
    "options": "Production Plan",
    "unique": 1
+  },
+  {
+   "fetch_from": "production_plan.site",
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Factory Floor Received",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 09:47:50.063796",
+ "modified": "2025-05-02 07:24:26.378183",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
- "name": "Factory Floor Recived",
+ "name": "Factory Floor Received",
  "owner": "Administrator",
  "permissions": [
   {

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestFactoryFloorRecived(FrappeTestCase):
+class TestFactoryFloorReceived(FrappeTestCase):
 	pass
