@@ -1,0 +1,65 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"VltNjmDRdm\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory</span>\",\"col\":12}},{\"id\":\"h-waeuhn6K\",\"type\":\"paragraph\",\"data\":{\"text\":\"Warehouse\",\"col\":4}},{\"id\":\"0CbEZ_vLd0\",\"type\":\"paragraph\",\"data\":{\"text\":\"Raw Materials\",\"col\":4}},{\"id\":\"kWRgHbYhV7\",\"type\":\"paragraph\",\"data\":{\"text\":\"Finished Goods\",\"col\":4}},{\"id\":\"E8UuK3SNpj\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Warehouses\",\"col\":4}},{\"id\":\"3lRqEWMSgi\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Item\",\"col\":4}},{\"id\":\"CHQZSu5yzP\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Item\",\"col\":4}},{\"id\":\"9J2X1WFtKz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Register Warehouse\",\"col\":4}},{\"id\":\"K10BxLdmbN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Register Raw Material\",\"col\":4}},{\"id\":\"gCoQdwbO_C\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Finished Good\",\"col\":4}}]",
+ "creation": "2025-04-07 21:12:23.720683",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "change",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Inventory",
+ "links": [],
+ "modified": "2025-05-13 11:43:44.093854",
+ "modified_by": "Administrator",
+ "module": "Inventory",
+ "name": "Inventory",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Warehouses",
+   "label": "Warehouses",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Item",
+   "label": "Item",
+   "quick_list_filter": "[[\"Item\",\"item_group\",\"=\",\"Finished Goods\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 30.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Register Raw Material",
+   "link_to": "Raw Materials Registration",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Register Warehouse",
+   "link_to": "Warehouses",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "New",
+   "label": "Create Finished Good",
+   "link_to": "Finished Good Registration",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Inventory"
+}
