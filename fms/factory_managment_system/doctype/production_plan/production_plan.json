@@ -9,11 +9,14 @@
   "finished_good",
   "batch",
   "formula",
+  "column_break_nuhh",
   "approver",
   "shift_leader",
   "remark",
+  "site",
+  "section_break_wree",
   "status",
-  "estimated_production",
+  "estimated_pr",
   "amended_from"
  ],
  "fields": [
@@ -55,7 +58,7 @@
    "reqd": 1
   },
   {
-   "default": "Pending",
+   "default": "Production Requested",
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status",
@@ -80,15 +83,32 @@
    "search_index": 1
   },
   {
-   "fieldname": "estimated_production",
-   "fieldtype": "Data",
+   "fieldname": "column_break_nuhh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_wree",
+   "fieldtype": "Section Break",
+   "label": "Others"
+  },
+  {
+   "depends_on": "eval: doc.batch",
+   "fieldname": "estimated_pr",
+   "fieldtype": "Float",
    "label": "Estimated Production"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-07 21:40:42.964212",
+ "modified": "2025-05-14 01:05:55.366180",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Production Plan",

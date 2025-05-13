@@ -7,6 +7,15 @@ app_license = "mit"
 fixtures = [
     {
         "dt": "Workflow"
+    },
+    {
+        "dt": "Workflow State"
+    },
+    {
+        "dt": "Workflow Transition"
+    },
+    {
+        "dt": "Item Groups"
     }
 ]
 # Apps
