@@ -8,7 +8,7 @@ from fms.factory_managment_system.doctype.factory_floor.factory_floor import upd
 class FactoryFloorUsed(Document):
 	def on_submit(self):
 		items = []
-		for item in self.received:
+		for item in self.stored:
 			items.append({
 				"item": item.item,
 				"measure": item.measure,

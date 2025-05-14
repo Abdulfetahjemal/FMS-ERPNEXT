@@ -18,7 +18,9 @@
   "section_break_ifqx",
   "production_plan",
   "amended_from",
-  "status"
+  "status",
+  "column_break_ifcb",
+  "used"
  ],
  "fields": [
   {
@@ -62,7 +64,8 @@
    "fieldname": "production_plan",
    "fieldtype": "Link",
    "label": "Production Plan",
-   "options": "Production Plan"
+   "options": "Production Plan",
+   "unique": 1
   },
   {
    "fetch_from": "production_plan.batch",
@@ -111,12 +114,23 @@
   {
    "fieldname": "section_break_ifqx",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ifcb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "used",
+   "fieldtype": "Table",
+   "label": "Used Items",
+   "options": "Factory Floor Item",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-30 19:59:03.069996",
+ "modified": "2025-05-14 09:28:00.411369",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Request",
