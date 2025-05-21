@@ -3,10 +3,19 @@
   "amended_from": null,
   "docstatus": 0,
   "doctype": "Item Groups",
-  "group_name": "Raw Materials",
-  "modified": "2025-03-19 15:25:17.048679",
-  "name": "Raw Materials",
-  "parent_group": null
+  "group_name": "Packaging",
+  "modified": "2025-03-19 15:25:17.140378",
+  "name": "Packaging",
+  "parent_group": "Raw Materials"
+ },
+ {
+  "amended_from": null,
+  "docstatus": 0,
+  "doctype": "Item Groups",
+  "group_name": "Electronics",
+  "modified": "2025-03-19 15:25:17.147454",
+  "name": "Electronics",
+  "parent_group": "Finished Goods"
  },
  {
   "amended_from": null,
@@ -21,18 +30,9 @@
   "amended_from": null,
   "docstatus": 0,
   "doctype": "Item Groups",
-  "group_name": "Packaging",
-  "modified": "2025-03-19 15:25:17.140378",
-  "name": "Packaging",
-  "parent_group": "Raw Materials"
- },
- {
-  "amended_from": null,
-  "docstatus": 0,
-  "doctype": "Item Groups",
-  "group_name": "Electronics",
-  "modified": "2025-03-19 15:25:17.147454",
-  "name": "Electronics",
-  "parent_group": "Finished Goods"
+  "group_name": "Raw Materials",
+  "modified": "2025-03-19 15:25:17.048679",
+  "name": "Raw Materials",
+  "parent_group": null
  }
 ]
