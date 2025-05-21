@@ -94,10 +94,10 @@ def get_active_formula(finished_good):
 
 @whitelist()
 def get_raw_materials(formula_name):
-    raw_materials = frappe.get_all(
+    raw_materials = frappe.db.get_list(
         "Raw Materials Child",
         filters={"parent": formula_name},
         fields=["raw_material", "quantity", "unit"],
+        as_list=False  # Returns list of dicts
     )
-
     return raw_materials

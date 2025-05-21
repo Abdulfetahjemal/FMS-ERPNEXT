@@ -6,8 +6,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "finished_good",
   "raw_materials",
+  "finished_good",
   "active",
   "estimated_p"
  ],
@@ -41,7 +41,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-14 08:38:31.714137",
+ "modified": "2025-05-21 11:55:07.174573",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Formula",
@@ -75,6 +75,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

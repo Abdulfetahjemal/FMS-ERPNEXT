@@ -61,7 +61,6 @@ frappe.ui.form.on("Production Plan", {
     },
     formula: function(frm) {
         if (frm.doc.formula) {
-            
             frappe.call({
                 method: "fms.factory_managment_system.doctype.production_plan.production_plan.get_raw_materials",
                 args: {
@@ -69,7 +68,6 @@ frappe.ui.form.on("Production Plan", {
                 },
                 callback: function(r) {
                     if (r.message) {
-                        
                         // Build the HTML content
                         let html_content = '<table class="table table-bordered">'; // Start a table
                         html_content += '<thead><tr><th>Raw Material</th><th>Quantity</th><th>Unit</th></tr></thead>'; // Table header
@@ -82,14 +80,19 @@ frappe.ui.form.on("Production Plan", {
                         html_content += '</tbody></table>';
 
                         // Set the HTML field value
-                        frm.fields_dict['formula_data'].$wrapper.html(html_content);
-                    } 
+                        frm.set_value('formula_data', html_content);
+                        frm.refresh_field('formula_data');
+                    } else {
+                        // If no raw materials are found, clear the HTML field
+                        frm.set_value('formula_data', '');
+                        frm.refresh_field('formula_data');
+                    }
                 }
             });
         } else {
             // If no formula is selected, clear the HTML field
-            frm.fields_dict['formula_data'].$wrapper.html('');
-
+            frm.set_value('formula_data', '');
+            frm.refresh_field('formula_data');
         }
     },
     refresh: function(frm) {
