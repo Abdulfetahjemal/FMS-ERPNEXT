@@ -19,8 +19,7 @@ frappe.ui.form.on("Production Plan", {
         if (frm.doc.finished_good) {
             // Call the server-side function when finished_good changes
             frappe.call({
-                // *** IMPORTANT: Replace 'YOUR_ACTUAL_APP_NAME' below ***
-                // Use the real internal name of your custom Frappe app.
+
                 method: "fms.factory_managment_system.doctype.production_plan.production_plan.get_active_formula",
                 args: {
                     finished_good: frm.doc.finished_good

@@ -15,10 +15,10 @@
  ],
  "fields": [
   {
+   "default": "Raw Materials",
    "fetch_from": "item.item_group",
    "fieldname": "item_type",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Item Type",
    "options": "Item Groups",
    "reqd": 1
@@ -69,12 +69,13 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-04-02 11:24:53.989354",
+ "modified": "2025-05-21 10:14:05.279825",
  "modified_by": "Administrator",
  "module": "Purchasing",
  "name": "Stock Child",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

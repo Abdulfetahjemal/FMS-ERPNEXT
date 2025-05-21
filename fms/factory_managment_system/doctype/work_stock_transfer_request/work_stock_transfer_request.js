@@ -6,5 +6,12 @@ frappe.ui.form.on('Work Stock Transfer Request', {
         if (!frm.doc.from_shift_manager) {
             frm.set_value('from_shift_manager', frappe.session.user);
         }
-    }
+        frm.set_query("item", "transferring", function(doc) {
+            return {
+                filters: {
+                    "item_group": "Raw Materials"
+                }
+            };
+        });
+    },   
 });
