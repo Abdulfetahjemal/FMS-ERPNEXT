@@ -1,0 +1,40 @@
+{
+ "cards": [
+  {
+   "card": "Finished Goods"
+  },
+  {
+   "card": "Raw Materials In Inventory"
+  },
+  {
+   "card": "Items Being Purchased"
+  },
+  {}
+ ],
+ "charts": [
+  {
+   "chart": "Inventory Movment",
+   "width": "Half"
+  },
+  {
+   "chart": "Item Balance",
+   "width": "Half"
+  },
+  {
+   "chart": "Warehouse Balance",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-05-22 10:00:09.812385",
+ "dashboard_name": "Inventory Overview",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-05-22 11:04:32.040128",
+ "modified_by": "Administrator",
+ "module": "Factory Managment System",
+ "name": "Inventory Overview",
+ "owner": "Administrator"
+}

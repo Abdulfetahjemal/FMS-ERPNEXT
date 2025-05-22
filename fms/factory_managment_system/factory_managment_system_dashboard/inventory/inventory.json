@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Inventory Activity",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-05-22 10:00:09.812385",
+ "dashboard_name": "Inventory",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-05-22 10:01:44.019608",
+ "modified_by": "Administrator",
+ "module": "Factory Managment System",
+ "name": "Inventory",
+ "owner": "Administrator"
+}
