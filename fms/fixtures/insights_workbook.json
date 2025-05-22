@@ -1,0 +1,14 @@
+[
+ {
+  "charts": "[\n {\n  \"chart_type\": \"Row\",\n  \"name\": \"uk1md4eo7o\",\n  \"query\": \"ui7fvn3puh\",\n  \"title\": \"Warehouse Bar Chart\"\n },\n {\n  \"chart_type\": \"Bar\",\n  \"name\": \"7qvq8ltuq8\",\n  \"query\": \"71gjr8m9b1\",\n  \"title\": \"Item Bar Chart\"\n },\n {\n  \"chart_type\": \"Table\",\n  \"name\": \"hb3l6h4e4j\",\n  \"query\": \"ui7fvn3puh\",\n  \"title\": \"Item Warehouse Table\"\n },\n {\n  \"chart_type\": \"Table\",\n  \"name\": \"t6d8t8ag12\",\n  \"query\": \"ui7fvn3puh\",\n  \"title\": \"Item Table\"\n },\n {\n  \"chart_type\": \"Table\",\n  \"name\": \"v8v7790bj0\",\n  \"query\": \"ui7fvn3puh\",\n  \"title\": \"Warehouse Item Table\"\n },\n {\n  \"chart_type\": \"Table\",\n  \"name\": \"3muqd8m0od\",\n  \"query\": \"p8ma1667oe\",\n  \"title\": \"Raw Materials Requested\"\n }\n]",
+  "dashboards": "[\n {\n  \"name\": \"ul8lubjh66\",\n  \"title\": \"Items\"\n }\n]",
+  "data_backup": null,
+  "docstatus": 0,
+  "doctype": "Insights Workbook",
+  "modified": "2025-05-22 13:06:42.114164",
+  "name": 1,
+  "queries": "[\n {\n  \"is_builder_query\": 1,\n  \"is_native_query\": 0,\n  \"is_script_query\": 0,\n  \"name\": \"ui7fvn3puh\",\n  \"title\": \"tabStock Balance\"\n },\n {\n  \"is_builder_query\": 1,\n  \"is_native_query\": 0,\n  \"is_script_query\": 0,\n  \"name\": \"71gjr8m9b1\",\n  \"title\": \"tabStock Ledger Entry\"\n },\n {\n  \"is_builder_query\": 1,\n  \"is_native_query\": 0,\n  \"is_script_query\": 0,\n  \"name\": \"p8ma1667oe\",\n  \"title\": \"tabPurchase Request inner child\"\n },\n {\n  \"is_builder_query\": 1,\n  \"is_native_query\": 0,\n  \"is_script_query\": 0,\n  \"name\": \"u391lajlg7\",\n  \"title\": \"tabItem\"\n }\n]",
+  "read_only": false,
+  "title": "Workbook 1"
+ }
+]

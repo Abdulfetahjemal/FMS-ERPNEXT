@@ -36,7 +36,8 @@ fixtures = [
     },
        {
         "dt": "Insights Table Link v3",
-    }
+    },
+    {"dt": "Insights Workbook"}
 
 ]
 # Apps
