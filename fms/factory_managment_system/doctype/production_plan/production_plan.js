@@ -58,6 +58,42 @@ frappe.ui.form.on("Production Plan", {
         } else {
             frm.set_value("estimated_p", 0);
         }
+           if (frm.doc.formula && frm.doc.batch) {
+            
+            frappe.call({
+                method: "fms.factory_managment_system.doctype.production_plan.production_plan.get_raw_materials",
+                args: {
+                    formula_name: frm.doc.formula
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        
+                        // Build the HTML content
+                        let html_content = '<table class="table table-bordered">'; // Start a table
+                        html_content += '<thead><tr><th>Raw Material</th><th>Quantity</th><th>Unit</th></tr></thead>'; // Table header
+                        html_content += '<tbody>';
+
+                        r.message.forEach(item => {
+                            let calculated_quantity = item.quantity;
+                            if (frm.doc.batch && !isNaN(frm.doc.batch)) {
+                                calculated_quantity = item.quantity * frm.doc.batch;
+                            }
+                            console.log(`Raw Material: ${item.raw_material}, Quantity: ${item.quantity}, Calculated Quantity: ${calculated_quantity}`);
+                            html_content += `<tr><td>${item.raw_material}</td><td>${calculated_quantity}</td><td>${item.unit}</td></tr>`;
+                        });
+
+                        html_content += '</tbody></table>';
+
+                        // Set the HTML field value
+                        frm.fields_dict['formula_data'].$wrapper.html(html_content);
+                    } 
+                }
+            });
+        } else {
+            // If no formula is selected, clear the HTML field
+            frm.fields_dict['formula_data'].$wrapper.html('');
+
+        }
     },
     formula: function(frm) {
         if (frm.doc.formula) {
@@ -76,7 +112,12 @@ frappe.ui.form.on("Production Plan", {
                         html_content += '<tbody>';
 
                         r.message.forEach(item => {
-                            html_content += `<tr><td>${item.raw_material}</td><td>${item.quantity}</td><td>${item.unit}</td></tr>`;
+                            let calculated_quantity = item.quantity;
+                            if (frm.doc.batch && !isNaN(frm.doc.batch)) {
+                                calculated_quantity = item.quantity * frm.doc.batch;
+                            }
+                            console.log(`Raw Material: ${item.raw_material}, Quantity: ${item.quantity}, Calculated Quantity: ${calculated_quantity}`);
+                            html_content += `<tr><td>${item.raw_material}</td><td>${calculated_quantity}</td><td>${item.unit}</td></tr>`;
                         });
 
                         html_content += '</tbody></table>';

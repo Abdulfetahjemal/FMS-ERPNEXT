@@ -41,7 +41,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-21 11:55:07.174573",
+ "modified": "2025-06-09 00:03:23.819717",
  "modified_by": "Administrator",
  "module": "Factory Managment System",
  "name": "Finished Good Formula",
@@ -75,6 +75,7 @@
    "write": 1
   }
  ],
+ "restrict_to_domain": "Office",
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
