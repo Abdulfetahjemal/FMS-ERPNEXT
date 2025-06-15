@@ -2,20 +2,20 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-04-30 20:28:01.877007",
+  "name": "Finished",
+  "style": "Primary",
+  "workflow_state_name": "Finished"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
   "icon": "remove",
   "modified": "2025-03-19 16:19:58.846170",
   "name": "Rejected",
   "style": "Danger",
   "workflow_state_name": "Rejected"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-04-02 12:43:18.143222",
-  "name": "Sales Office Approval",
-  "style": "",
-  "workflow_state_name": "Sales Office Approval"
  },
  {
   "docstatus": 0,
@@ -39,10 +39,10 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-04-30 20:28:01.877007",
-  "name": "Finished",
-  "style": "Primary",
-  "workflow_state_name": "Finished"
+  "modified": "2025-04-02 12:43:18.143222",
+  "name": "Sales Office Approval",
+  "style": "",
+  "workflow_state_name": "Sales Office Approval"
  },
  {
   "docstatus": 0,

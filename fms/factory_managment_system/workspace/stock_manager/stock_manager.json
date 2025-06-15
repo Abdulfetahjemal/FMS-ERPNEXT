@@ -1,0 +1,55 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"jy8krWN6h6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Stock</span>\",\"col\":12}},{\"id\":\"DLQ18c0HLA\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Stock Out Approval\",\"col\":6}},{\"id\":\"3cHI-rYj9G\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Stock In\",\"col\":6}},{\"id\":\"3un94JXK2W\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Finished Good</b></span>\",\"col\":12}},{\"id\":\"JWE3gCHQG7\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"IN\",\"col\":6}},{\"id\":\"VYazsHRWVs\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"OUT\",\"col\":6}},{\"id\":\"8b1_WP_mDX\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Report</b></span>\",\"col\":12}},{\"id\":\"hcJqk9zvvg\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"warehouse bar chart\",\"col\":12}}]",
+ "creation": "2025-06-15 12:52:17.562102",
+ "custom_blocks": [
+  {
+   "custom_block_name": "warehouse bar chart",
+   "label": "warehouse bar chart"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Stock Manager",
+ "links": [],
+ "modified": "2025-06-15 13:28:39.402460",
+ "modified_by": "Administrator",
+ "module": "Factory Managment System",
+ "name": "Stock Manager",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Purchase Request",
+   "label": "Stock In",
+   "quick_list_filter": "[[\"Purchase Request\",\"status\",\"like\",\"%Pending%\",false]]"
+  },
+  {
+   "document_type": "Purchase Request",
+   "label": "IN",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Production Plan",
+   "label": "Stock Out Approval",
+   "quick_list_filter": "[[\"Production Plan\",\"status\",\"like\",\"%Production Approved%\",false]]"
+  },
+  {
+   "document_type": "Finished Good Request",
+   "label": "OUT",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 35.0,
+ "shortcuts": [],
+ "title": "Stock Manager"
+}

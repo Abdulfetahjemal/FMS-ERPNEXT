@@ -1,0 +1,45 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"RdUwNrw9r3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Shift Leader</span>\",\"col\":12}},{\"id\":\"BALXI8Buv1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Daily Plan</b></span>\",\"col\":12}},{\"id\":\"bE13TpEJkd\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Formula</b></span>\",\"col\":12}},{\"id\":\"xpv0r3gxP-\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Formula\",\"col\":12}},{\"id\":\"-Uxtneqy8E\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Submit Finished Good</b></span><span class=\\\"h4\\\"><b></b></span>\",\"col\":12}},{\"id\":\"eqHb9YNur6\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Finished Good\",\"col\":12}},{\"id\":\"RgKxGfmfkJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transfer Raw Material</b></span>\",\"col\":12}},{\"id\":\"vjoAcDkOBb\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Transfer Raw Material\",\"col\":12}}]",
+ "creation": "2025-06-15 13:22:54.062850",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "arrow-down-right",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Shift Leader",
+ "links": [],
+ "modified": "2025-06-15 13:28:21.793415",
+ "modified_by": "Administrator",
+ "module": "Factory Managment System",
+ "name": "Shift Leader",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Finished Good Formula",
+   "label": "Formula",
+   "quick_list_filter": "[[\"Finished Good Formula\",\"active\",\"=\",1,false]]"
+  },
+  {
+   "document_type": "Finished Good Request",
+   "label": "Finished Good",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Work Stock Transfer Request",
+   "label": "Transfer Raw Material",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 37.0,
+ "shortcuts": [],
+ "title": "Shift Leader"
+}

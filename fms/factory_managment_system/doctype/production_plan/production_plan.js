@@ -58,7 +58,7 @@ frappe.ui.form.on("Production Plan", {
         } else {
             frm.set_value("estimated_p", 0);
         }
-           if (frm.doc.formula && frm.doc.batch) {
+           if (frm.doc.formula ) {
             
             frappe.call({
                 method: "fms.factory_managment_system.doctype.production_plan.production_plan.get_raw_materials",

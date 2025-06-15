@@ -40,12 +40,13 @@
    "fieldname": "balance",
    "fieldtype": "Currency",
    "label": "Balance",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-07 18:52:45.288305",
+ "modified": "2025-06-15 14:53:00.830812",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Client",
@@ -65,6 +66,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

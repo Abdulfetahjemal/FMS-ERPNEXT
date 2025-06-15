@@ -1,0 +1,50 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"IEQZPYvxqj\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Office</span>\",\"col\":12}},{\"id\":\"1_l_ptSSDc\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Stock In Request\",\"col\":6}},{\"id\":\"IeXFqgwLYg\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Sales Approval\",\"col\":6}},{\"id\":\"o27N33zybM\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Payment\",\"col\":12}},{\"id\":\"1eG_q-ZYh3\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Formula\",\"col\":12}}]",
+ "creation": "2025-06-09 07:49:15.867345",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tick",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Office",
+ "links": [],
+ "modified": "2025-06-15 14:46:01.798177",
+ "modified_by": "Administrator",
+ "module": "Factory Managment System",
+ "name": "Office",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Purchase Request",
+   "label": "Stock In Request",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Finished Good Formula",
+   "label": "Formula",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Payment",
+   "label": "Payment",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Sale Request",
+   "label": "Sales Approval",
+   "quick_list_filter": "[[\"Sale Request\",\"status\",\"like\",\"%Pending Office Approval%\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 34.0,
+ "shortcuts": [],
+ "title": "Office"
+}

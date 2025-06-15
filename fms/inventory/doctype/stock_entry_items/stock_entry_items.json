@@ -55,7 +55,6 @@
    "label": "Batch No"
   },
   {
-   "fetch_from": "item.default_warehouse",
    "fieldname": "warehouse",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -67,12 +66,13 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-04-02 20:06:55.214345",
+ "modified": "2025-06-15 14:12:21.177172",
  "modified_by": "Administrator",
  "module": "Inventory",
  "name": "Stock Entry Items",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
